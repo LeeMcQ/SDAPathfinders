@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cape Conference SDA • Youth Ministries Uniform Builder 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* ═══════════════════════════════════════════
+       ROOT VARIABLES
+    ═══════════════════════════════════════════ */
+    :root {
+      --navy: #002855;
+      --navy-dark: #001a40;
+      --navy-mid: #003087;
+      --navy-light: #1a4a8a;
+      --red: #c0392b;
+      --red-dark: #962d22;
+      --red-light: #e74c3c;
+      --green: #1e6b3a;
+      --green-light: #27ae60;
+      --gold: #c9a22f;
+      --gold-light: #e8bf50;
+      --white: #ffffff;
+      --off-white: #f8f9fc;
+      --light-gray: #eef0f5;
+      --mid-gray: #d1d5db;
+      --text-dark: #1a202c;
+      --text-body: #374151;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      /* Builder colours */
+      --b-bg: #001540;
+      --b-glass: rgba(255,255,255,0.07);
+      --b-glass-hover: rgba(255,255,255,0.13);
+      --b-border: rgba(201,162,47,0.3);
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 6px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.18);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    /* ═══════════════════════════════════════════
+       RESET & BASE
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--text-body); background: var(--white); overflow-x: hidden; }
+    img { max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ═══════════════════════════════════════════
+       SHARED HEADER
+    ═══════════════════════════════════════════ */
+    .site-header {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 55%, var(--navy-light) 100%);
+      border-bottom: 4px solid var(--gold);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.45);
+    }
+    .header-inner {
+      max-width: 1340px; margin: 0 auto;
+      padding: 14px 24px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .header-logos { display: flex; align-items: center; gap: 12px; }
+    .header-logos img { height: 50px; width: auto; object-fit: contain; }
+    .logo-sep { width: 1px; height: 36px; background: rgba(201,162,47,0.5); }
+    .header-title { text-align: center; flex: 1; min-width: 180px; }
+    .header-title h1 {
+      font-family: 'Cinzel', serif; font-size: clamp(1rem, 2.5vw, 1.55rem);
+      color: var(--gold); letter-spacing: 0.06em; line-height: 1.2;
+    }
+    .header-title p { font-size: 0.68rem; color: rgba(180,210,255,0.8); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 3px; }
+    .header-badge { color: var(--gold); font-size: 2rem; }
+
+    /* ═══════════════════════════════════════════
+       TAB NAV
+    ═══════════════════════════════════════════ */
+    .tab-bar {
+      background: var(--navy-dark);
+      border-bottom: 1px solid rgba(201,162,47,0.25);
+      position: sticky; top: 82px; z-index: 190;
+    }
+    .tab-bar-inner {
+      max-width: 1340px; margin: 0 auto; padding: 0 24px;
+      display: flex; gap: 0; overflow-x: auto; scrollbar-width: none;
+    }
+    .tab-bar-inner::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 22px;
+      color: rgba(180,210,255,0.65);
+      font-family: 'Oswald', sans-serif; font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+      border-bottom: 3px solid transparent;
+      transition: all 0.25s; white-space: nowrap; flex-shrink: 0;
+    }
+    .tab-btn i { font-size: 0.9rem; }
+    .tab-btn:hover { color: var(--white); background: rgba(255,255,255,0.05); }
+    .tab-btn.active { color: var(--gold); border-bottom-color: var(--gold); background: rgba(201,162,47,0.07); }
+
+    /* ═══════════════════════════════════════════
+       PAGES
+    ═══════════════════════════════════════════ */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ══════════════════════════════════════════════════════════
+       PAGE 1 — BUILDER (dark theme)
+    ══════════════════════════════════════════════════════════ */
+    #page-builder {
+      background: var(--b-bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% 0%, rgba(26,92,46,0.2) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,48,135,0.35) 0%, transparent 55%),
+        repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(201,162,47,0.015) 60px, rgba(201,162,47,0.015) 61px);
+      min-height: calc(100vh - 130px);
+    }
+
+    /* hero strip */
+    .b-hero {
+      background: linear-gradient(90deg, var(--green) 0%, var(--navy-mid) 55%, var(--navy-dark) 100%);
+      border-bottom: 1px solid var(--b-border); padding: 16px 24px; text-align: center;
+    }
+    .b-hero p { font-size: 0.8rem; color: rgba(200,220,255,0.8); max-width: 820px; margin: 0 auto; line-height: 1.7; }
+    .b-hero strong { color: var(--gold-light); }
+
+    /* step progress */
+    .b-steps { max-width: 1340px; margin: 0 auto; padding: 22px 24px 0; display: flex; gap: 6px; align-items: center; }
+    .b-step-item { display: flex; align-items: center; gap: 7px; flex: 1; min-width: 0; }
+    .b-step-circle {
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 2px solid rgba(201,162,47,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel', serif; font-size: 0.72rem; font-weight: 700;
+      color: rgba(201,162,47,0.5); flex-shrink: 0; transition: all 0.3s;
+    }
+    .b-step-circle.active { background: var(--gold); color: var(--navy-dark); border-color: var(--gold); }
+    .b-step-circle.done { background: var(--green-light); color: #fff; border-color: var(--green-light); }
+    .b-step-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(180,200,255,0.5); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .b-step-label.active { color: var(--gold-light); }
+    .b-step-conn { flex: 0 0 16px; height: 1px; background: rgba(201,162,47,0.2); }
+
+    /* main grid */
+    .b-grid { max-width: 1340px; margin: 22px auto 0; padding: 0 24px 60px; display: grid; grid-template-columns: 400px 1fr; gap: 26px; align-items: start; }
+    @media (max-width: 980px) { .b-grid { grid-template-columns: 1fr; } }
+
+    /* panels */
+    .b-panel {
+      background: rgba(255,255,255,0.06); backdrop-filter: blur(18px);
+      border: 1px solid rgba(201,162,47,0.2); border-radius: var(--radius);
+      padding: 26px; box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    }
+    .b-panel-sticky { position: sticky; top: 128px; }
+    @media (max-width: 980px) { .b-panel-sticky { position: static; } }
+
+    /* step inline label */
+    .b-step-lbl { display: flex; align-items: center; gap: 8px; margin-bottom: 11px; }
+    .b-step-lbl .n {
+      width: 22px; height: 22px; border-radius: 50%; background: var(--gold);
+      color: var(--navy-dark); font-family: 'Cinzel', serif; font-size: 0.68rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .b-step-lbl span { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(180,210,255,0.75); }
+
+    /* selection buttons */
+    .sel-grid { display: grid; gap: 9px; margin-bottom: 20px; }
+    .sel-grid.g2 { grid-template-columns: 1fr 1fr; }
+    .sel-grid.g3 { grid-template-columns: 1fr 1fr 1fr; }
+    .sel-btn {
+      background: rgba(255,255,255,0.07); border: 2px solid rgba(255,255,255,0.11);
+      border-radius: var(--radius-sm); color: rgba(255,255,255,0.72);
+      padding: 13px 8px; text-align: center; transition: all 0.22s;
+      font-family: 'Oswald', sans-serif; font-size: 0.75rem;
+      letter-spacing: 0.07em; font-weight: 500;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+    }
+    .sel-btn i { font-size: 1.4rem; opacity: 0.7; transition: opacity 0.22s; }
+    .sel-btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(201,162,47,0.5); color: #fff; transform: translateY(-2px); }
+    .sel-btn.active {
+      background: linear-gradient(135deg, rgba(26,92,46,0.45), rgba(0,48,135,0.45));
+      border-color: var(--gold); color: var(--gold-light);
+      box-shadow: 0 0 18px rgba(201,162,47,0.18), inset 0 0 18px rgba(201,162,47,0.05);
+    }
+    .sel-btn.active i { opacity: 1; }
+
+    /* preview box */
+    .b-preview { border-radius: var(--radius-sm); overflow: hidden; border: 3px solid var(--gold); box-shadow: 0 0 28px rgba(201,162,47,0.2); margin-top: 18px; }
+    .b-preview-bar { background: var(--navy-mid); padding: 7px 12px; text-align: center; font-family: 'Oswald', sans-serif; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .b-preview-img { position: relative; height: 280px; background: rgba(0,0,0,0.3); overflow: hidden; }
+    .b-preview-img img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.4s; }
+    .b-preview-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: rgba(255,255,255,0.22); }
+    .b-preview-ph i { font-size: 2.8rem; }
+    .b-preview-ph p { font-size: 0.72rem; text-align: center; max-width: 170px; line-height: 1.5; }
+    .b-preview-cap { background: rgba(0,0,0,0.85); padding: 9px 14px; text-align: center; font-size: 0.72rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.04em; }
+    .b-hint { font-size: 0.62rem; color: rgba(180,210,255,0.35); text-align: center; margin-top: 5px; font-style: italic; }
+
+    /* panel title */
+    .b-title { font-family: 'Cinzel', serif; font-size: clamp(1rem, 1.8vw, 1.3rem); color: var(--gold); display: flex; align-items: center; gap: 10px; margin-bottom: 5px; }
+    .b-sub { font-size: 0.73rem; color: rgba(180,210,255,0.65); margin-bottom: 20px; line-height: 1.65; }
+
+    /* notice strip */
+    .b-notice { background: linear-gradient(90deg, rgba(26,92,46,0.25), rgba(0,48,135,0.25)); border: 1px solid rgba(201,162,47,0.25); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 18px; display: flex; gap: 9px; }
+    .b-notice i { color: var(--gold); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
+    .b-notice p { font-size: 0.72rem; color: rgba(200,220,255,0.78); line-height: 1.6; }
+
+    /* empty state */
+    .b-empty { text-align: center; padding: 48px 20px; color: rgba(255,255,255,0.28); }
+    .b-empty i { font-size: 3.2rem; margin-bottom: 14px; display: block; }
+    .b-empty p { font-size: 0.82rem; line-height: 1.7; }
+
+    /* uniform items */
+    .u-item {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 9px;
+      transition: all 0.22s; cursor: pointer;
+    }
+    .u-item:hover { background: rgba(255,255,255,0.09); border-color: rgba(201,162,47,0.3); }
+    .u-item.checked { border-color: rgba(201,162,47,0.38); background: rgba(26,92,46,0.14); }
+    .u-item input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--gold); cursor: pointer; flex-shrink: 0; }
+
+    /* thumb with zoom */
+    .u-thumb-wrap { position: relative; flex-shrink: 0; }
+    .u-thumb {
+      width: 46px; height: 46px; border-radius: 8px; object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.14); display: block;
+      transition: transform 0.25s, box-shadow 0.25s; cursor: zoom-in;
+    }
+    .u-thumb:hover { transform: scale(3.2); z-index: 60; box-shadow: 0 0 22px rgba(201,162,47,0.65); position: relative; }
+
+    .u-info { flex: 1; min-width: 0; }
+    .u-name { font-size: 0.83rem; font-weight: 700; color: #fff; }
+    .u-badge { display: inline-block; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 7px; border-radius: 4px; margin-top: 3px; }
+    .b-req { background: rgba(0,48,135,0.6); color: #93c5fd; border: 1px solid rgba(147,197,253,0.3); }
+    .b-opt { background: rgba(201,162,47,0.2); color: var(--gold-light); border: 1px solid rgba(201,162,47,0.3); }
+    .u-price { font-family: 'Cinzel', serif; font-size: 0.98rem; font-weight: 700; color: var(--gold-light); white-space: nowrap; flex-shrink: 0; }
+
+    /* divider */
+    .b-div { display: flex; align-items: center; gap: 10px; margin: 24px 0 16px; }
+    .b-div::before, .b-div::after { content: ''; flex: 1; height: 1px; background: rgba(201,162,47,0.22); }
+    .b-div span { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; white-space: nowrap; }
+
+    /* form */
+    .b-form-grid { display: grid; gap: 13px; }
+    .b-form-grid.c2 { grid-template-columns: 1fr 1fr; }
+    .b-form-grid.c3 { grid-template-columns: 1fr 1fr 1fr; }
+    @media (max-width: 640px) { .b-form-grid.c2, .b-form-grid.c3 { grid-template-columns: 1fr; } }
+    .b-fg label { display: block; font-size: 0.63rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(180,210,255,0.7); margin-bottom: 5px; }
+    .b-fc {
+      width: 100%; background: rgba(255,255,255,0.07); border: 1.5px solid rgba(201,162,47,0.32);
+      border-radius: var(--radius-sm); padding: 11px 13px; color: #fff;
+      font-family: 'Open Sans', sans-serif; font-size: 0.83rem; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .b-fc::placeholder { color: rgba(180,210,255,0.38); }
+    .b-fc:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,162,47,0.1); }
+    select.b-fc option { background: #001a3d; color: #fff; }
+    textarea.b-fc { resize: vertical; min-height: 80px; }
+
+    /* info box */
+    .b-info { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,162,47,0.2); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 12px; }
+    .b-info-t { font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--gold); margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+    .b-info p { font-size: 0.72rem; color: rgba(180,210,255,0.62); line-height: 1.6; }
+
+    /* total bar */
+    .b-total { background: linear-gradient(135deg, var(--navy-dark), var(--navy-mid)); border: 2px solid var(--gold); border-radius: var(--radius); padding: 22px 26px; display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 24px; box-shadow: 0 0 36px rgba(201,162,47,0.14); }
+    .b-total-lbl { font-size: 0.68rem; letter-spacing: 0.15em; color: rgba(180,210,255,0.68); text-transform: uppercase; margin-bottom: 3px; }
+    .b-total-amt { font-family: 'Cinzel', serif; font-size: 2.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
+    .b-total-note { font-size: 0.65rem; color: rgba(180,210,255,0.45); margin-top: 3px; }
+    .b-print-btn {
+      background: var(--gold); color: var(--navy-dark); border-radius: var(--radius-sm);
+      padding: 14px 24px; font-family: 'Oswald', sans-serif; font-size: 0.85rem;
+      font-weight: 600; letter-spacing: 0.1em; display: flex; align-items: center; gap: 9px;
+      transition: all 0.22s; box-shadow: 0 4px 18px rgba(201,162,47,0.28);
+    }
+    .b-print-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 26px rgba(201,162,47,0.42); }
+
+    /* builder footer */
+    .b-footer-strip { max-width: 1340px; margin: 0 auto; padding: 0 24px 32px; }
+    .ref-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 0; }
+    @media (max-width: 700px) { .ref-strip { grid-template-columns: 1fr; } }
+    .ref-card-d {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(201,162,47,0.18);
+      border-radius: var(--radius); overflow: hidden; transition: all 0.28s; display: block; color: #fff;
+    }
+    .ref-card-d:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 12px 32px rgba(0,0,0,0.35); }
+    .ref-card-d img { width: 100%; height: 140px; object-fit: cover; display: block; }
+    .ref-card-d-body { padding: 14px 16px; }
+    .ref-card-d-body strong { display: block; font-family: 'Cinzel', serif; font-size: 0.82rem; color: #fff; margin-bottom: 5px; }
+    .ref-card-d-body p { font-size: 0.7rem; color: rgba(180,210,255,0.6); line-height: 1.5; }
+    .ref-card-d-body .arr { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 0.67rem; color: var(--gold); font-weight: 700; }
+
+    /* suppliers */
+    .b-suppliers { background: rgba(0,0,0,0.5); border-top: 2px solid var(--b-border); padding: 48px 24px; }
+    .b-supp-inner { max-width: 1340px; margin: 0 auto; }
+    .b-supp-title { font-family: 'Cinzel', serif; font-size: clamp(1rem,2.2vw,1.4rem); color: var(--gold); text-align: center; margin-bottom: 6px; }
+    .b-supp-sub { text-align: center; font-size: 0.75rem; color: rgba(180,210,255,0.55); margin-bottom: 28px; }
+    .b-supp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    @media (max-width: 700px) { .b-supp-grid { grid-template-columns: 1fr; } }
+    .b-supp-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,162,47,0.18); border-radius: var(--radius); padding: 22px; transition: all 0.26s; }
+    .b-supp-card:hover { border-color: var(--gold); transform: translateY(-3px); }
+    .b-supp-card h4 { font-family: 'Cinzel', serif; font-size: 0.88rem; color: var(--gold); margin-bottom: 8px; }
+    .b-supp-card p { font-size: 0.75rem; color: rgba(180,210,255,0.68); line-height: 1.6; }
+    .b-supp-card a { color: var(--gold-light); font-size: 0.75rem; }
+    .b-supp-card a:hover { text-decoration: underline; }
+
+    /* builder page footer */
+    .b-page-footer { background: var(--navy-dark); border-top: 1px solid rgba(201,162,47,0.18); padding: 24px; text-align: center; }
+    .b-page-footer p { font-size: 0.7rem; color: rgba(180,210,255,0.42); line-height: 1.8; }
+    .b-page-footer a { color: var(--gold); }
+    .b-page-footer a:hover { text-decoration: underline; }
+
+    /* item animations */
+    #uniform-list .u-item { animation: uFadeIn 0.28s ease both; }
+    @keyframes uFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+    #uniform-list .u-item:nth-child(1){animation-delay:.04s}
+    #uniform-list .u-item:nth-child(2){animation-delay:.08s}
+    #uniform-list .u-item:nth-child(3){animation-delay:.12s}
+    #uniform-list .u-item:nth-child(4){animation-delay:.16s}
+    #uniform-list .u-item:nth-child(5){animation-delay:.20s}
+    #uniform-list .u-item:nth-child(6){animation-delay:.24s}
+    #uniform-list .u-item:nth-child(7){animation-delay:.28s}
+    #uniform-list .u-item:nth-child(8){animation-delay:.32s}
+    #uniform-list .u-item:nth-child(9){animation-delay:.36s}
+    #uniform-list .u-item:nth-child(10){animation-delay:.40s}
+    #uniform-list .u-item:nth-child(11){animation-delay:.44s}
+
+    /* ══════════════════════════════════════════════════════════
+       PAGE 2 — GC SPECIFICATIONS (light/white theme – GC style)
+    ══════════════════════════════════════════════════════════ */
+    #page-specs { background: var(--white); }
+
+    /* hero banner */
+    .gc-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 50%, var(--red-dark) 100%);
+      padding: 60px 24px 70px; text-align: center; position: relative; overflow: hidden;
+    }
+    .gc-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.02) 40px, rgba(255,255,255,0.02) 41px);
+    }
+    .gc-hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .gc-hero-eyebrow { display: inline-block; background: var(--red); color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 14px; border-radius: 4px; margin-bottom: 18px; }
+    .gc-hero h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.6rem,4vw,2.8rem); font-weight: 700; color: #fff; line-height: 1.15; letter-spacing: 0.03em; margin-bottom: 14px; text-transform: uppercase; }
+    .gc-hero h2 span { color: var(--gold); }
+    .gc-hero p { font-size: 0.9rem; color: rgba(220,230,255,0.85); max-width: 640px; margin: 0 auto 24px; line-height: 1.8; }
+    .gc-hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .gc-btn-primary { background: var(--red); color: #fff; padding: 13px 26px; border-radius: 6px; font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all 0.22s; }
+    .gc-btn-primary:hover { background: var(--red-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(192,57,43,0.4); }
+    .gc-btn-outline { background: transparent; color: #fff; padding: 13px 26px; border-radius: 6px; border: 2px solid rgba(255,255,255,0.45); font-family: 'Oswald', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 8px; transition: all 0.22s; }
+    .gc-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+    /* wave divider */
+    .gc-wave { display: block; width: 100%; height: 50px; background: var(--navy-mid); }
+    .gc-wave-white { fill: var(--white); }
+
+    /* content wrap */
+    .gc-wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* section title style */
+    .gc-section-head { text-align: center; padding: 56px 0 36px; }
+    .gc-section-tag { display: inline-block; background: var(--navy-mid); color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 12px; border-radius: 3px; margin-bottom: 14px; }
+    .gc-section-head h3 { font-family: 'Oswald', sans-serif; font-size: clamp(1.3rem,3vw,2rem); font-weight: 700; color: var(--navy); letter-spacing: 0.03em; text-transform: uppercase; line-height: 1.2; margin-bottom: 12px; }
+    .gc-section-head p { font-size: 0.85rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; line-height: 1.8; }
+    .gc-accent-line { width: 60px; height: 4px; background: var(--red); border-radius: 2px; margin: 14px auto 0; }
+
+    /* intro text block */
+    .gc-intro-block { background: var(--off-white); border-left: 5px solid var(--navy-mid); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 22px 26px; margin-bottom: 32px; }
+    .gc-intro-block p { font-size: 0.88rem; color: var(--text-body); line-height: 1.85; margin-bottom: 10px; }
+    .gc-intro-block p:last-child { margin-bottom: 0; }
+    .gc-intro-block strong { color: var(--navy); }
+
+    /* quote block */
+    .gc-quote { background: var(--navy-dark); color: #fff; border-radius: var(--radius); padding: 30px 36px; margin: 32px 0; text-align: center; position: relative; overflow: hidden; }
+    .gc-quote::before { content: '\201C'; position: absolute; top: -10px; left: 20px; font-size: 8rem; color: rgba(255,255,255,0.06); font-family: Georgia,serif; line-height: 1; }
+    .gc-quote blockquote { font-size: clamp(0.95rem,1.5vw,1.15rem); font-style: italic; line-height: 1.8; color: rgba(220,230,255,0.88); position: relative; z-index: 1; }
+    .gc-quote cite { display: block; margin-top: 12px; font-size: 0.72rem; color: var(--gold); font-style: normal; font-family: 'Oswald', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* two col layout */
+    .gc-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+    @media (max-width: 700px) { .gc-2col { grid-template-columns: 1fr; } }
+    .gc-3col { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin: 28px 0; }
+    @media (max-width: 800px) { .gc-3col { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .gc-3col { grid-template-columns: 1fr; } }
+
+    /* info cards */
+    .gc-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; box-shadow: var(--shadow-sm); transition: all 0.26s; }
+    .gc-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--navy-light); }
+    .gc-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--navy-mid); display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .gc-card-icon i { color: #fff; font-size: 1.1rem; }
+    .gc-card h4 { font-family: 'Oswald', sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--navy); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 8px; }
+    .gc-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* uniform type tabs */
+    .gc-type-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+    .gc-type-tab { padding: 8px 18px; border: 2px solid var(--border); border-radius: 30px; font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-muted); transition: all 0.2s; cursor: pointer; text-transform: uppercase; background: #fff; }
+    .gc-type-tab:hover { border-color: var(--navy-mid); color: var(--navy-mid); }
+    .gc-type-tab.active { background: var(--navy-mid); color: #fff; border-color: var(--navy-mid); }
+
+    /* UNIFORM IMAGE CARDS – with zoom + description */
+    .gc-uniform-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    @media (max-width: 900px) { .gc-uniform-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .gc-uniform-grid { grid-template-columns: 1fr; } }
+
+    .gc-ucard {
+      background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.28s;
+    }
+    .gc-ucard:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); border-color: var(--navy-mid); }
+
+    .gc-ucard-img-wrap { position: relative; overflow: hidden; background: var(--light-gray); cursor: zoom-in; }
+    .gc-ucard-img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .gc-ucard:hover .gc-ucard-img { transform: scale(1.04); }
+    .gc-ucard-zoom-btn {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(0,40,85,0.8); color: #fff;
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; opacity: 0; transition: opacity 0.22s;
+    }
+    .gc-ucard:hover .gc-ucard-zoom-btn { opacity: 1; }
+    .gc-ucard-type-badge {
+      position: absolute; top: 10px; left: 10px;
+      background: var(--red); color: #fff; font-family: 'Oswald', sans-serif;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 3px;
+    }
+
+    .gc-ucard-body { padding: 16px 18px 10px; }
+    .gc-ucard-title { font-family: 'Oswald', sans-serif; font-size: 0.98rem; font-weight: 600; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 6px; }
+    .gc-ucard-short { font-size: 0.77rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* expanded description panel */
+    .gc-ucard-desc {
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease;
+      background: var(--off-white); border-top: 2px solid var(--navy-mid);
+    }
+    .gc-ucard-desc.open { max-height: 400px; padding: 16px 18px; }
+    .gc-ucard-desc-title { font-family: 'Oswald', sans-serif; font-size: 0.78rem; color: var(--navy); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+    .gc-ucard-desc-title i { color: var(--red); font-size: 0.75rem; }
+    .gc-ucard-desc p { font-size: 0.76rem; color: var(--text-body); line-height: 1.7; margin-bottom: 8px; }
+    .gc-ucard-desc-meta { display: flex; flex-direction: column; gap: 5px; margin-top: 10px; }
+    .gc-ucard-desc-meta-row { display: flex; gap: 8px; align-items: flex-start; font-size: 0.72rem; }
+    .gc-ucard-desc-meta-row strong { color: var(--navy); min-width: 95px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .gc-ucard-desc-meta-row span { color: var(--text-muted); line-height: 1.5; }
+    .gc-ucard-expand-btn {
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+      padding: 10px 18px;
+      background: none; border-top: 1px solid var(--border);
+      font-family: 'Oswald', sans-serif; font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy-mid);
+      width: 100%; transition: all 0.2s;
+    }
+    .gc-ucard-expand-btn:hover { background: var(--off-white); color: var(--red); }
+    .gc-ucard-expand-btn i { transition: transform 0.28s; font-size: 0.7rem; }
+    .gc-ucard-expand-btn.open i { transform: rotate(180deg); }
+
+    /* insignia placement section */
+    .gc-placement-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; margin: 28px 0; }
+    @media (max-width: 640px) { .gc-placement-grid { grid-template-columns: 1fr; } }
+    .gc-placement-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .gc-placement-card-head { background: var(--navy-mid); padding: 12px 18px; display: flex; align-items: center; gap: 10px; }
+    .gc-placement-card-head i { color: var(--gold); font-size: 1rem; }
+    .gc-placement-card-head h4 { font-family: 'Oswald', sans-serif; font-size: 0.88rem; font-weight: 600; color: #fff; letter-spacing: 0.08em; text-transform: uppercase; }
+    .gc-placement-card img { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--light-gray); cursor: zoom-in; transition: transform 0.3s; }
+    .gc-placement-card img:hover { transform: scale(1.03); }
+    .gc-placement-card-body { padding: 16px 18px; }
+    .gc-placement-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 0.78rem; }
+    .gc-placement-item:last-child { margin-bottom: 0; }
+    .gc-placement-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--navy-mid); flex-shrink: 0; margin-top: 5px; }
+    .gc-placement-item-body { line-height: 1.6; color: var(--text-body); }
+    .gc-placement-item-body strong { color: var(--navy); display: block; font-size: 0.75rem; }
+
+    /* rules / policy section */
+    .gc-policy { background: var(--navy-dark); color: #fff; padding: 48px 24px; }
+    .gc-policy-inner { max-width: 1200px; margin: 0 auto; }
+    .gc-policy h3 { font-family: 'Oswald', sans-serif; font-size: clamp(1.1rem,2.5vw,1.7rem); font-weight: 700; color: var(--gold); text-align: center; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
+    .gc-policy-sub { text-align: center; font-size: 0.78rem; color: rgba(180,210,255,0.6); margin-bottom: 32px; }
+    .gc-rules-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    @media (max-width: 640px) { .gc-rules-grid { grid-template-columns: 1fr; } }
+    .gc-rule-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 18px; display: flex; gap: 14px; align-items: flex-start; }
+    .gc-rule-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+    .gc-rule-icon.ok { background: rgba(39,174,96,0.25); }
+    .gc-rule-icon.ok i { color: #27ae60; font-size: 0.95rem; }
+    .gc-rule-icon.no { background: rgba(192,57,43,0.25); }
+    .gc-rule-icon.no i { color: #e74c3c; font-size: 0.95rem; }
+    .gc-rule-item p { font-size: 0.78rem; color: rgba(220,230,255,0.8); line-height: 1.65; }
+    .gc-rule-item strong { color: #fff; font-size: 0.78rem; display: block; margin-bottom: 3px; }
+
+    /* class A vs B section */
+    .gc-ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 28px 0; }
+    @media (max-width: 640px) { .gc-ab-grid { grid-template-columns: 1fr; } }
+    .gc-ab-card { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); }
+    .gc-ab-card-head { padding: 18px 22px; display: flex; align-items: center; gap: 12px; }
+    .gc-ab-card-head.a { background: var(--navy-mid); }
+    .gc-ab-card-head.b { background: var(--green); }
+    .gc-ab-card-head h4 { font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; color: #fff; letter-spacing: 0.06em; text-transform: uppercase; }
+    .gc-ab-card-head .big-letter { font-family: 'Cinzel', serif; font-size: 2.5rem; color: rgba(255,255,255,0.25); font-weight: 900; line-height: 1; margin-left: auto; }
+    .gc-ab-card-body { background: #fff; border: 1px solid var(--border); border-top: none; padding: 20px 22px; }
+    .gc-ab-list { list-style: none; }
+    .gc-ab-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.8rem; color: var(--text-body); line-height: 1.65; padding: 6px 0; border-bottom: 1px solid var(--light-gray); }
+    .gc-ab-list li:last-child { border-bottom: none; }
+    .gc-ab-list li::before { content: '•'; color: var(--navy-mid); font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+
+    /* download links */
+    .gc-downloads { background: var(--light-gray); padding: 48px 24px; }
+    .gc-downloads-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+    .gc-downloads h3 { font-family: 'Oswald', sans-serif; font-size: clamp(1.1rem,2vw,1.55rem); font-weight: 700; color: var(--navy); text-transform: uppercase; margin-bottom: 8px; }
+    .gc-downloads p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 28px; }
+    .gc-dl-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    @media (max-width: 700px) { .gc-dl-grid { grid-template-columns: 1fr; } }
+    .gc-dl-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: all 0.26s; text-align: left; display: block; color: inherit; }
+    .gc-dl-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--navy-mid); }
+    .gc-dl-card img { width: 100%; height: 150px; object-fit: cover; display: block; }
+    .gc-dl-card-body { padding: 16px 18px; }
+    .gc-dl-card-body strong { font-family: 'Oswald', sans-serif; font-size: 0.92rem; color: var(--navy); display: block; margin-bottom: 5px; letter-spacing: 0.04em; }
+    .gc-dl-card-body p { font-size: 0.73rem; color: var(--text-muted); line-height: 1.5; }
+    .gc-dl-cta { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; background: var(--navy-mid); color: #fff; padding: 7px 14px; border-radius: 5px; font-family: 'Oswald', sans-serif; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background 0.2s; }
+    .gc-dl-card:hover .gc-dl-cta { background: var(--red); }
+
+    /* ════════════════════════════
+       IMAGE LIGHTBOX / MODAL
+    ════════════════════════════ */
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,0.88); backdrop-filter: blur(6px);
+      align-items: center; justify-content: center;
+      padding: 20px;
+    }
+    .lightbox.open { display: flex; }
+    .lb-inner {
+      background: #fff; border-radius: var(--radius);
+      max-width: 700px; width: 100%; max-height: 90vh;
+      overflow-y: auto; box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      animation: lbIn 0.3s ease;
+    }
+    @keyframes lbIn { from { opacity: 0; transform: scale(0.94) translateY(16px); } to { opacity: 1; transform: none; } }
+    .lb-img { width: 100%; max-height: 380px; object-fit: cover; display: block; }
+    .lb-body { padding: 24px 28px; }
+    .lb-badge { display: inline-block; background: var(--red); color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 10px; border-radius: 3px; margin-bottom: 12px; }
+    .lb-title { font-family: 'Oswald', sans-serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px; }
+    .lb-description { font-size: 0.83rem; color: var(--text-body); line-height: 1.8; margin-bottom: 16px; }
+    .lb-meta { background: var(--off-white); border-radius: 8px; padding: 14px 18px; margin-bottom: 16px; }
+    .lb-meta-row { display: flex; gap: 10px; align-items: flex-start; font-size: 0.77rem; margin-bottom: 8px; }
+    .lb-meta-row:last-child { margin-bottom: 0; }
+    .lb-meta-row strong { color: var(--navy); min-width: 110px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; font-weight: 700; }
+    .lb-meta-row span { color: var(--text-muted); line-height: 1.55; }
+    .lb-close { display: block; width: 100%; padding: 13px; background: var(--navy-mid); color: #fff; font-family: 'Oswald', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; border-radius: 0 0 var(--radius) var(--radius); transition: background 0.2s; }
+    .lb-close:hover { background: var(--red); cursor: pointer; }
+
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f0f0f0; }
+    ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 3px; }
+    #page-builder ::-webkit-scrollbar-track { background: var(--navy-dark); }
+    #page-builder ::-webkit-scrollbar-thumb { background: rgba(201,162,47,0.4); }
+
+    /* reveal animation */
+    .gc-reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .gc-reveal.visible { opacity: 1; transform: none; }
+
+    /* print */
+    @media print { .no-print { display: none !important; } }
+
+    /* size hidden */
+    #size-section { display: none; }
+    #size-section.vis { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     SHARED HEADER
+════════════════════════════════════ -->
+<header class="site-header no-print">
+  <div class="header-inner">
+    <div class="header-logos">
+      <img src="https://ccadventist.org/wp-content/uploads/2024/01/cc-logo.png" alt="Cape Conference SDA" onerror="this.style.display='none'">
+      <div class="logo-sep"></div>
+      <img src="https://www.gcyouthministries.org/wp-content/uploads/2023/01/GCYM-Logo-300x300.png" alt="GC Youth Ministries" onerror="this.style.display='none'">
+    </div>
+    <div class="header-title">
+      <h1>YOUTH MINISTRIES</h1>
+      <p>Cape Conference &nbsp;•&nbsp; Uniform Builder &amp; Specifications &nbsp;•&nbsp; SID 2025</p>
+    </div>
+    
+<img src="logo.jpg" alt="Body Alignment Logo" style="height:40px;width:auto;object-fit:contain;">
+  </div>
+</header>
+
+<!-- ════════════════════════════════════
+     TAB NAV
+════════════════════════════════════ -->
+<nav class="tab-bar no-print">
+  <div class="tab-bar-inner">
+    <button class="tab-btn active" onclick="switchTab('builder')" id="tab-builder">
+      <i class="fas fa-shirt"></i> Uniform Builder
+    </button>
+    <button class="tab-btn" onclick="switchTab('specs')" id="tab-specs">
+      <i class="fas fa-book-open"></i> GC Uniform Specifications
+    </button>
+    <button class="tab-btn" onclick="switchTab('builder'); setTimeout(()=>document.querySelector('.b-suppliers').scrollIntoView({behavior:'smooth'}),100)" id="tab-suppliers">
+      <i class="fas fa-store"></i> Approved Suppliers
+    </button>
+    <a class="tab-btn" href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank" rel="noopener">
+      <i class="fas fa-file-pdf"></i> SID 2025 PDF
+    </a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 1: UNIFORM BUILDER
+════════════════════════════════════════════════════════ -->
+<div id="page-builder" class="page active">
+
+  <div class="b-hero">
+    <p>The official Pathfinder uniform is a <strong>visual statement of identity and belonging</strong> to a worldwide movement. Configure your complete Class A uniform below, check requirements, and print a ready-to-shop list — aligned with the <strong>SID 2025 Uniforms Booklet</strong>.</p>
+  </div>
+
+  <!-- Step Progress -->
+  <div class="b-steps no-print">
+    <div class="b-step-item"><div class="b-step-circle active" id="sc-1">1</div><div class="b-step-label active" id="sl-1">Gender</div></div>
+    <div class="b-step-conn"></div>
+    <div class="b-step-item"><div class="b-step-circle" id="sc-2">2</div><div class="b-step-label" id="sl-2">Programme</div></div>
+    <div class="b-step-conn"></div>
+    <div class="b-step-item"><div class="b-step-circle" id="sc-3">3</div><div class="b-step-label" id="sl-3">Role</div></div>
+    <div class="b-step-conn"></div>
+    <div class="b-step-item"><div class="b-step-circle" id="sc-4">4</div><div class="b-step-label" id="sl-4">Details</div></div>
+    <div class="b-step-conn"></div>
+    <div class="b-step-item"><div class="b-step-circle" id="sc-5">5</div><div class="b-step-label" id="sl-5">Print</div></div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="b-grid">
+
+    <!-- LEFT: BUILDER PANEL -->
+    <div>
+      <div class="b-panel b-panel-sticky">
+
+        <div class="b-step-lbl"><div class="n">1</div><span>I am</span></div>
+        <div class="sel-grid g2">
+          <button class="sel-btn" id="btn-male" onclick="selectGender('male')"><i class="fas fa-person"></i>MALE</button>
+          <button class="sel-btn" id="btn-female" onclick="selectGender('female')"><i class="fas fa-person-dress"></i>FEMALE</button>
+        </div>
+
+        <div class="b-step-lbl"><div class="n">2</div><span>Programme</span></div>
+        <div class="sel-grid g3">
+          <button class="sel-btn" id="btn-adventurer" onclick="selectProgram('adventurer')"><i class="fas fa-star"></i>ADVENTURER</button>
+          <button class="sel-btn" id="btn-pathfinder" onclick="selectProgram('pathfinder')"><i class="fas fa-compass"></i>PATHFINDER</button>
+          <button class="sel-btn" id="btn-masterguide" onclick="selectProgram('masterguide')"><i class="fas fa-medal"></i>MASTER GUIDE</button>
+        </div>
+
+        <div class="b-step-lbl"><div class="n">3</div><span>My Role</span></div>
+        <div class="sel-grid g2">
+          <button class="sel-btn" id="btn-student" onclick="selectRole('student')"><i class="fas fa-user-graduate"></i>STUDENT / YOUTH</button>
+          <button class="sel-btn" id="btn-counselor" onclick="selectRole('counselor')"><i class="fas fa-user-tie"></i>COUNSELOR / STAFF</button>
+        </div>
+
+        <!-- Preview -->
+        <div class="b-preview">
+          <div class="b-preview-bar">&#9733; LIVE UNIFORM PREVIEW • CAPE CONFERENCE SDA &#9733;</div>
+          <div class="b-preview-img">
+            <div class="b-preview-ph" id="b-preview-ph">
+              <i class="fas fa-shirt"></i>
+              <p>Select your options above to preview your official uniform</p>
+            </div>
+            <img id="preview-image" src="" alt="Uniform Preview" style="display:none;">
+          </div>
+          <div class="b-preview-cap" id="preview-label">Select your options above</div>
+        </div>
+        <p class="b-hint">&#128269; Hover thumbnails in the list to zoom • Click to see full description</p>
+      </div>
+    </div>
+
+    <!-- RIGHT: CHECKLIST PANEL -->
+    <div>
+      <div class="b-panel">
+        <div class="b-title"><i class="fas fa-list-check"></i> YOUR OFFICIAL UNIFORM LIST</div>
+        <p class="b-sub">All items sourced from the <strong style="color:var(--gold-light)">SID 2025 Uniforms Booklet</strong>. Required items are pre-selected. Deselect anything you already own. <strong style="color:var(--gold-light)">Click any item thumbnail</strong> to see full description &amp; placement guide.</p>
+
+        <div class="b-notice">
+          <i class="fas fa-circle-info"></i>
+          <p>The Pathfinder uniform is worn with pride worldwide. Wearing the uniform provides a consciousness of belonging to a club that rightly represents the Adventist youth of today. Any style or colour deviation must be authorised by the General Conference Youth Ministries Department.</p>
+        </div>
+
+        <div id="uniform-list">
+          <div class="b-empty">
+            <i class="fas fa-arrow-left"></i>
+            <p>Complete the three steps on the left to see your personalised official uniform checklist with estimated prices.</p>
+          </div>
+        </div>
+
+        <!-- Sizes -->
+        <div id="size-section">
+          <div class="b-div"><span>Your Sizes</span></div>
+          <div class="b-form-grid c2">
+            <div class="b-fg"><label>Shirt / Blouse Size</label>
+              <select id="shirt-size" class="b-fc">
+                <option value="">Select Size</option>
+                <option>Youth XS</option><option>Youth S</option><option>Youth M</option>
+                <option>S</option><option>M</option><option>L</option>
+                <option>XL</option><option>XXL</option><option>XXXL</option>
+              </select>
+            </div>
+            <div class="b-fg"><label>Pants / Skirt Size</label>
+              <select id="pants-size" class="b-fc">
+                <option value="">Select Size</option>
+                <option>Youth 24</option><option>Youth 26</option><option>Youth 28</option>
+                <option>28</option><option>30</option><option>32</option>
+                <option>34</option><option>36</option><option>38</option><option>40</option><option>42</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Honours -->
+        <div class="b-div"><span>Honours &amp; Badges</span></div>
+        <div class="b-info">
+          <div class="b-info-t"><i class="fas fa-award"></i> Honour Badges</div>
+          <p>Honour badges are worn on the sash and can only be issued with approval from your club leader or director. List honours you are requesting below.</p>
+        </div>
+        <div class="b-fg" style="margin-bottom:0">
+          <label>Honours &amp; Badges Requested</label>
+          <textarea id="honours-input" class="b-fc" placeholder="e.g. Camping Honour, First Aid, Swimming, Nature Study …"></textarea>
+        </div>
+
+        <!-- Personal Details -->
+        <div class="b-div"><span>Your Contact Details</span></div>
+        <div class="b-form-grid c3">
+          <div class="b-fg"><label>Full Name</label><input id="user-name" type="text" class="b-fc" placeholder="Lee van der Merwe"></div>
+          <div class="b-fg"><label>Phone Number</label><input id="user-phone" type="tel" class="b-fc" placeholder="082 555 1234"></div>
+          <div class="b-fg"><label>Email Address</label><input id="user-email" type="email" class="b-fc" placeholder="lee@example.com"></div>
+        </div>
+
+        <!-- Total -->
+        <div class="b-total">
+          <div>
+            <div class="b-total-lbl">Estimated Total</div>
+            <div class="b-total-amt" id="total-price">R 0</div>
+            <div class="b-total-note">Selected items only &nbsp;•&nbsp; Prices approx. incl. VAT</div>
+          </div>
+          <button class="b-print-btn no-print" onclick="generatePrintPDF()">
+            <i class="fas fa-print"></i> PRINT SHOPPING LIST
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reference Documents -->
+  <div class="b-footer-strip gc-reveal no-print">
+    <div class="b-div" style="margin-bottom:24px;"><span>Official Reference Documents</span></div>
+    <div class="ref-strip">
+      <a class="ref-card-d" href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&h=280&fit=crop" alt="SID 2025">
+        <div class="ref-card-d-body">
+          <strong>SID 2025 Uniforms Booklet</strong>
+          <p>3rd Edition – Southern Africa Indian Ocean Division. Full diagrams &amp; specifications.</p>
+          <span class="arr"><i class="fas fa-file-pdf"></i> Open PDF <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a class="ref-card-d" href="https://www.gcyouthministries.org/ministries/pathfinders/pathfinder-uniforms-specifications/" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=280&fit=crop" alt="GC Specs">
+        <div class="ref-card-d-body">
+          <strong>GC Global Uniform Specifications</strong>
+          <p>Official General Conference standards governing all Pathfinder uniforms worldwide.</p>
+          <span class="arr"><i class="fas fa-globe"></i> Open Website <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a class="ref-card-d" href="http://aaps.adventist.org/wp-content/uploads/2020/02/SID-Uniform-Booklet-Final-2.pdf" target="_blank" rel="noopener">
+        <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?w=600&h=280&fit=crop" alt="SID 2020">
+        <div class="ref-card-d-body">
+          <strong>SID Uniform Booklet (2020)</strong>
+          <p>Earlier SID reference booklet – still useful for historical insignia placement context.</p>
+          <span class="arr"><i class="fas fa-file-pdf"></i> Open PDF <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Suppliers -->
+  <div class="b-suppliers no-print">
+    <div class="b-supp-inner">
+      <div class="b-supp-title">OFFICIAL SUPPLIERS — CAPE CONFERENCE 2026</div>
+      <p class="b-supp-sub">Purchase from these approved Cape Conference suppliers to ensure SID 2025 compliance.</p>
+      <div class="b-supp-grid">
+        <div class="b-supp-card">
+          <h4><i class="fas fa-store" style="margin-right:7px;"></i>TOC Youth Ministries Store</h4>
+          <p>Official uniforms for Adventurers, Pathfinders, and Master Guides. Online ordering available nationwide.</p>
+          <a href="https://ay.toc.adventist.org/?product_cat=sda-uniform" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" style="font-size:0.68rem;margin-right:4px;"></i>ay.toc.adventist.org</a>
+        </div>
+        <div class="b-supp-card">
+          <h4><i class="fas fa-tag" style="margin-right:7px;"></i>Adventurer &amp; Pathfinder Wear</h4>
+          <p>Johannesburg-based supplier. Full uniform sets, individual items, sashes, and insignia accessories.</p>
+          <p style="margin-top:8px;color:var(--gold-light);font-size:0.75rem;"><i class="fab fa-whatsapp" style="color:#25d366;"></i> WhatsApp: 072 699 0090</p>
+        </div>
+        <div class="b-supp-card">
+          <h4><i class="fas fa-scissors" style="margin-right:7px;"></i>Makinze Perfect Clothing</h4>
+          <p>Nationwide specialist in custom insignia embroidery, bespoke tailoring, and SDA uniform sets.</p>
+          <p style="margin-top:8px;font-size:0.72rem;color:rgba(180,210,255,0.45);">Contact your conference office for details</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="b-page-footer no-print">
+    <p>
+      Cape Conference Youth Ministry &nbsp;•&nbsp;
+      <a href="https://ccadventist.org" target="_blank">ccadventist.org</a> &nbsp;•&nbsp;
+      Specifications per <a href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank">SID 2025 Booklet</a>
+      &amp; <a href="https://www.gcyouthministries.org/ministries/pathfinders/pathfinder-uniforms-specifications/" target="_blank">GC Youth Ministries</a><br>
+      Prices are indicative estimates only. Always verify current pricing with approved suppliers.
+    </p>
+  </div>
+
+</div><!-- /page-builder -->
+
+
+<!-- ════════════════════════════════════════════════════════
+     PAGE 2: GC UNIFORM SPECIFICATIONS
+════════════════════════════════════════════════════════ -->
+<div id="page-specs" class="page">
+
+  <!-- HERO -->
+  <div class="gc-hero">
+    <div class="gc-hero-inner">
+      <span class="gc-hero-eyebrow"><i class="fas fa-globe"></i> &nbsp;General Conference Youth Ministries</span>
+      <h2>PATHFINDER <span>UNIFORM</span><br>SPECIFICATIONS</h2>
+      <p>The official uniform for Adventurers, Pathfinders, Master Guides, and Ambassadors as stipulated by the General Conference of Seventh-day Adventist® Youth Ministries Department — adopted for the Southern Africa Indian Ocean Division (SID 2025).</p>
+      <div class="gc-hero-btns">
+        <a class="gc-btn-primary" href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank" rel="noopener"><i class="fas fa-download"></i> Download SID 2025 Booklet</a>
+        <a class="gc-btn-outline" href="https://www.gcyouthministries.org/ministries/pathfinders/pathfinder-uniforms-specifications/" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> GC Youth Ministries Website</a>
+        <button class="gc-btn-outline" onclick="switchTab('builder')"><i class="fas fa-shirt"></i> Open Uniform Builder</button>
+      </div>
+    </div>
+  </div>
+
+  <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" class="gc-wave" style="display:block;background:white;"><path class="gc-wave-white" d="M0,0 C360,50 1080,50 1440,0 L1440,0 L0,0 Z" fill="var(--navy-mid)"/></svg>
+
+  <!-- ── INTRO ── -->
+  <div class="gc-wrap gc-reveal">
+    <div class="gc-section-head">
+      <span class="gc-section-tag">About the Uniform</span>
+      <h3>Why the Uniform Matters</h3>
+      <div class="gc-accent-line"></div>
+      <p>The Pathfinder uniform helps make the Pathfinder program real and visible. It is emblematic and representative of the worldwide club's ideals and standards.</p>
+    </div>
+
+    <div class="gc-intro-block">
+      <p><strong>Each individual member becomes a very vital representative of the organization.</strong> Wearing the uniform provides a consciousness of belonging to a club that rightly represents the Adventist youth of today. If the uniform is worn as ordinary clothing it will have failed in its purpose.</p>
+      <p>The uniform should always be neat and clean. To wear it commonly for ordinary play or work lowers its dignity. The Pathfinder Club program should be so valuable to each member that the uniform will be acquired and worn with enthusiasm.</p>
+      <p><strong>While the uniform of the Pathfinder Club varies in regions or countries around the world, the insignia and where they are placed are well-nigh universally the same.</strong> Designing and setting the position of the insignia is the responsibility of the World Pathfinder Director and the General Conference in consultation with the divisions.</p>
+    </div>
+
+    <div class="gc-quote">
+      <blockquote>"The official uniform for the Adventurer, Pathfinders, Master-Guide, and Ambassador is stipulated by the General Conference of Seventh-day Adventist® Youth Ministries Department. Any deviation or changes, including the uniform's style and color, must first be authorized by the General Conference Youth Ministries Department."</blockquote>
+      <cite>— GC Youth Ministries • Official Uniform Policy</cite>
+    </div>
+  </div>
+
+  <!-- ── CORE PRINCIPLES CARDS ── -->
+  <div class="gc-wrap gc-reveal" style="padding-bottom:48px;">
+    <div class="gc-section-head" style="padding-top:20px;">
+      <span class="gc-section-tag">Core Elements</span>
+      <h3>The Insignia System</h3>
+      <div class="gc-accent-line"></div>
+      <p>Insignia fall into two categories: Identification Insignia (who you belong to) and Recognition/Award Insignia (what you have achieved).</p>
+    </div>
+    <div class="gc-3col">
+      <div class="gc-card">
+        <div class="gc-card-icon"><i class="fas fa-certificate"></i></div>
+        <h4>Identification Insignia</h4>
+        <p>Emblems that signify the organisation to which the person belongs — including the Pathfinder World Emblem, Club Crescent, and Conference/Union patches.</p>
+      </div>
+      <div class="gc-card">
+        <div class="gc-card-icon"><i class="fas fa-award"></i></div>
+        <h4>Recognition Insignia</h4>
+        <p>Emblems indicating class achievement, position, or special achievements in conduct or service — including class pins, honour badges, and rank strips.</p>
+      </div>
+      <div class="gc-card">
+        <div class="gc-card-icon"><i class="fas fa-triangle-exclamation"></i></div>
+        <h4>Division Authority</h4>
+        <p>Clubs, conferences, unions, and divisions may make no exceptions or variations without definite permission from World Pathfinder Headquarters.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CLASS A vs B ── -->
+  <div style="background:var(--off-white);padding:48px 0;">
+    <div class="gc-wrap gc-reveal">
+      <div class="gc-section-head" style="padding-top:0;">
+        <span class="gc-section-tag">Uniform Types</span>
+        <h3>Class A vs Class B Uniform</h3>
+        <div class="gc-accent-line"></div>
+      </div>
+      <div class="gc-ab-grid">
+        <div class="gc-ab-card">
+          <div class="gc-ab-card-head a">
+            <div><h4>Class A — Dress Uniform</h4><p style="color:rgba(200,220,255,0.8);font-size:0.75rem;margin-top:4px;">Formal occasions &amp; public events</p></div>
+            <div class="big-letter">A</div>
+          </div>
+          <div class="gc-ab-card-body">
+            <ul class="gc-ab-list">
+              <li>Official Pathfinder dress uniform for formal occasions</li>
+              <li>White long-sleeve pilot shirt/blouse (pressed, collar buttoned)</li>
+              <li>Designated colour pants or skirt per division specifications</li>
+              <li>Pathfinder neckerchief/scarf with official slide/woggle</li>
+              <li>Official garrison cap or beret with emblem</li>
+              <li>Honour sash with earned honour badges</li>
+              <li>All identification insignia properly placed</li>
+              <li>Black polished shoes and matching socks</li>
+              <li>Worn at camporees, parades, church, Pathfinder Sabbath</li>
+            </ul>
+          </div>
+        </div>
+        <div class="gc-ab-card">
+          <div class="gc-ab-card-head b">
+            <div><h4>Class B — Field Uniform</h4><p style="color:rgba(200,230,200,0.8);font-size:0.75rem;margin-top:4px;">Club meetings &amp; outdoor activities</p></div>
+            <div class="big-letter">B</div>
+          </div>
+          <div class="gc-ab-card-body">
+            <ul class="gc-ab-list">
+              <li>Used during most regular club meetings and camp-outs</li>
+              <li>T-shirt and blue pants (club may design own T-shirt)</li>
+              <li>Each club may create its own design for field uniform T-shirts</li>
+              <li>Suggestions: Pathfinder logo, local club logo, or combined logo</li>
+              <li>Sweatshirts/hoodies acceptable for cold weather activities</li>
+              <li>Comfortable, practical footwear appropriate for activities</li>
+              <li>Worn during regular weekly meetings, nature study, community service</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── UNIFORM ITEMS GALLERY (with zoom + description) ── -->
+  <div class="gc-wrap gc-reveal" style="padding-bottom:0;">
+    <div class="gc-section-head">
+      <span class="gc-section-tag">Uniform Items</span>
+      <h3>Official Uniform Items &amp; Their Use</h3>
+      <div class="gc-accent-line"></div>
+      <p>Click <strong>"View Details"</strong> on any item to see the full description, placement guide, and usage instructions. Sourced from the SID 2025 Uniforms Booklet and GC specifications.</p>
+    </div>
+
+    <!-- Programme Filter Tabs -->
+    <div class="gc-type-tabs">
+      <button class="gc-type-tab active" onclick="filterItems('all', this)">All Items</button>
+      <button class="gc-type-tab" onclick="filterItems('pathfinder', this)">Pathfinder</button>
+      <button class="gc-type-tab" onclick="filterItems('adventurer', this)">Adventurer</button>
+      <button class="gc-type-tab" onclick="filterItems('masterguide', this)">Master Guide</button>
+      <button class="gc-type-tab" onclick="filterItems('field', this)">Field Uniform</button>
+    </div>
+
+    <div class="gc-uniform-grid" id="gc-items-grid">
+      <!-- populated by JS -->
+    </div>
+  </div>
+
+  <!-- ── INSIGNIA PLACEMENT ── -->
+  <div style="background:var(--off-white);padding:56px 0;margin-top:56px;">
+    <div class="gc-wrap gc-reveal">
+      <div class="gc-section-head" style="padding-top:0;">
+        <span class="gc-section-tag">Placement Guide</span>
+        <h3>Where Insignia Are Placed</h3>
+        <div class="gc-accent-line"></div>
+        <p>Correct placement of all insignia is essential. The positions below are standard across all SDA divisions unless specifically authorised otherwise.</p>
+      </div>
+      <div class="gc-placement-grid">
+
+        <div class="gc-placement-card">
+          <div class="gc-placement-card-head">
+            <i class="fas fa-arrow-right-to-bracket"></i>
+            <h4>Right Sleeve</h4>
+          </div>
+          <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?w=600&h=200&fit=crop" alt="Right Sleeve Placement" onclick="openLightbox({img:this.src,badge:'Placement Guide',title:'Right Sleeve Insignia',desc:'The right sleeve carries identification insignia that show which organisation you belong to. Placement must be precise per division specifications.',meta:[{k:'Top position',v:'Club Name Crescent — ½ inch below shoulder seam'},{ k:'Second position',v:'Staff Name Strip — 2 inches below shoulder seam, ¼ inch above Pathfinder triangle'},{ k:'Third position',v:'Pathfinder Triangle Patch — 3-inch triangle, shoulder high, right sleeve'},{ k:'Below triangle',v:'Conference/Union patches stacked below the Pathfinder triangle'}]})">
+          <div class="gc-placement-card-body">
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Club Name Crescent</strong>½ inch (1.2 cm) below shoulder seam, centred on sleeve</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Staff Name Strip</strong>2 inches (5 cm) below shoulder seam, ¼ inch above Pathfinder triangle</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Pathfinder Triangle Patch</strong>3-inch triangle worn shoulder high on right sleeve, in local language</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Conference / Union Patches</strong>Stacked below the Pathfinder triangle</div></div>
+          </div>
+        </div>
+
+        <div class="gc-placement-card">
+          <div class="gc-placement-card-head">
+            <i class="fas fa-arrow-left-to-bracket"></i>
+            <h4>Left Sleeve &amp; Pocket</h4>
+          </div>
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=200&fit=crop" alt="Left Sleeve Placement" onclick="openLightbox({img:this.src,badge:'Placement Guide',title:'Left Sleeve & Pocket Insignia',desc:'The left side carries achievement and recognition insignia, showing what the member has achieved and their class level.',meta:[{k:'Left sleeve top',v:'Pathfinder World Emblem — 1½ inches below shoulder seam'},{k:'Left pocket',v:'Class Name Strip above pocket, Advanced Class Bar above strip'},{k:'Pin placement',v:'Highest Class Pin on extreme right, Pathfinder Pin below it, Baptismal Pin on extreme left'},{k:'Good Conduct',v:'Good Conduct Ribbon above Advanced Class Bar'}]})">
+          <div class="gc-placement-card-body">
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Pathfinder World Emblem</strong>Left sleeve, 1½ inches below shoulder seam</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Class Name Strip</strong>Above left pocket, corresponding with highest class achieved</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Class Pins</strong>Highest Class Pin right side of pocket flap, Pathfinder Pin below, Baptismal Pin extreme left</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Good Conduct Ribbon</strong>Above the Advanced Class Bar</div></div>
+          </div>
+        </div>
+
+        <div class="gc-placement-card">
+          <div class="gc-placement-card-head">
+            <i class="fas fa-layer-group"></i>
+            <h4>Honour Sash</h4>
+          </div>
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=200&fit=crop" alt="Sash Placement" onclick="openLightbox({img:this.src,badge:'Placement Guide',title:'Honour Sash',desc:'The honour sash is worn diagonally from the right shoulder to the left hip. It displays all earned Pathfinder honour badges in neat rows.',meta:[{k:'Worn by',v:'Pathfinders and staff who have earned honours'},{k:'Position',v:'Right shoulder to left hip, over the shirt'},{k:'Badge layout',v:'Badges sewn in rows, starting from the top'},{k:'Uniformity',v:'If any club member wears a sash, all members must wear one'}]})">
+          <div class="gc-placement-card-body">
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Position</strong>Worn diagonally — right shoulder to left hip, over the shirt</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Honour Badges</strong>All earned Pathfinder honour badges sewn in neat rows</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Class Pins</strong>Class pins may be placed on the sash when specified</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Uniformity Rule</strong>If club wears sash, ALL members must wear it</div></div>
+          </div>
+        </div>
+
+        <div class="gc-placement-card">
+          <div class="gc-placement-card-head">
+            <i class="fas fa-hat-wizard"></i>
+            <h4>Cap / Headwear</h4>
+          </div>
+          <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&h=200&fit=crop" alt="Cap Placement" onclick="openLightbox({img:this.src,badge:'Placement Guide',title:'Cap & Headwear',desc:'The Pathfinder cap or beret carries the 2-inch Pathfinder Club emblem triangle and must be the official programme colour.',meta:[{k:'Emblem',v:'2-inch (5 cm) triangle worn on the cap/beret'},{k:'Colour (SID)',v:'Bottle green garrison cap for Pathfinders'},{k:'Colour (Adventurer)',v:'Navy blue garrison cap'},{k:'Master Guide',v:'Bottle green garrison cap with MG Logo'},{k:'Only option',v:'The official beret or garrison cap — no substitutions allowed'}]})">
+          <div class="gc-placement-card-body">
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Emblem</strong>2-inch (5 cm) Pathfinder triangle worn on cap/beret front</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Pathfinder (SID)</strong>Bottle green garrison cap — no substitutions</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Adventurer</strong>Navy blue garrison cap with orange trim</div></div>
+            <div class="gc-placement-item"><div class="gc-placement-dot"></div><div class="gc-placement-item-body"><strong>Master Guide</strong>Bottle green garrison cap with MG Logo and gold detail</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHEN TO WEAR ── -->
+  <div class="gc-policy">
+    <div class="gc-policy-inner">
+      <h3>WHEN TO WEAR THE UNIFORM</h3>
+      <p class="gc-policy-sub">Official guidance from the GC Youth Ministries Department on appropriate and inappropriate occasions for wearing the Pathfinder uniform.</p>
+      <div class="gc-rules-grid">
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon ok"><i class="fas fa-check"></i></div>
+          <div><strong>Pathfinder Meetings &amp; Events</strong><p>Regular club meetings, investiture ceremonies, camporees, and all official Pathfinder club activities.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon ok"><i class="fas fa-check"></i></div>
+          <div><strong>Community Service</strong><p>While engaging in witness activity or community service such as food distribution, Ingathering, literature distribution, and similar outreach.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon ok"><i class="fas fa-check"></i></div>
+          <div><strong>Church &amp; Religious Activities</strong><p>Pathfinder Sabbath, Adventist Youth programmes, church parades, and conference-level religious gatherings.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon ok"><i class="fas fa-check"></i></div>
+          <div><strong>Official Parades &amp; Public Events</strong><p>Public marches, community parades, and events where the Pathfinder organisation is officially representing the church.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon no"><i class="fas fa-times"></i></div>
+          <div><strong>Ordinary Play or Casual Wear</strong><p>The uniform should never be worn for ordinary play or work. To do so lowers its dignity and defeats its purpose as a sacred representation of the organisation.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon no"><i class="fas fa-times"></i></div>
+          <div><strong>Commercial or Political Purposes</strong><p>The uniform must not be worn when engaged in selling or solicitation for personal profit, or for any commercial or political purposes.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon no"><i class="fas fa-times"></i></div>
+          <div><strong>Situations That Discredit the Organisation</strong><p>The uniform must not be worn at any time or place where wearing it discounts the organisation, casts reflection upon the uniform, or lowers its dignity and esteem.</p></div>
+        </div>
+        <div class="gc-rule-item">
+          <div class="gc-rule-icon no"><i class="fas fa-times"></i></div>
+          <div><strong>Unauthorized Modifications</strong><p>Any deviation including style and colour changes must be authorised by the GC Youth Ministries Department. No club, conference, or division may make exceptions without permission.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DOWNLOADS ── -->
+  <div class="gc-downloads">
+    <div class="gc-downloads-inner">
+      <h3>OFFICIAL REFERENCE DOCUMENTS</h3>
+      <p>Download the official specification documents for full diagrams, insignia placement, and size guides.</p>
+      <div class="gc-dl-grid">
+        <a class="gc-dl-card" href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=600&h=150&fit=crop" alt="SID 2025">
+          <div class="gc-dl-card-body">
+            <strong>SID 2025 Uniforms Booklet</strong>
+            <p>3rd Edition – Southern Africa Indian Ocean Division. Full diagrams &amp; specifications. Latest edition.</p>
+            <span class="gc-dl-cta"><i class="fas fa-download"></i> Download PDF</span>
+          </div>
+        </a>
+        <a class="gc-dl-card" href="https://www.gcyouthministries.org/ministries/pathfinders/pathfinder-uniforms-specifications/" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=150&fit=crop" alt="GC Specs">
+          <div class="gc-dl-card-body">
+            <strong>GC Global Uniform Specifications</strong>
+            <p>Official General Conference standards governing all Pathfinder, Adventurer, and Master Guide uniforms worldwide.</p>
+            <span class="gc-dl-cta"><i class="fas fa-external-link-alt"></i> View Online</span>
+          </div>
+        </a>
+        <a class="gc-dl-card" href="http://aaps.adventist.org/wp-content/uploads/2020/02/SID-Uniform-Booklet-Final-2.pdf" target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1472289065668-ce650ac443d2?w=600&h=150&fit=crop" alt="SID 2020">
+          <div class="gc-dl-card-body">
+            <strong>SID Uniform Booklet (2020 Edition)</strong>
+            <p>Earlier SID reference booklet — useful for historical insignia placement rules and reference context.</p>
+            <span class="gc-dl-cta"><i class="fas fa-download"></i> Download PDF</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- GC page footer -->
+  <div style="background:var(--navy-dark);border-top:1px solid rgba(201,162,47,0.2);padding:24px;text-align:center;">
+    <p style="font-size:0.7rem;color:rgba(180,210,255,0.42);line-height:1.8;">
+      Cape Conference Youth Ministry &nbsp;•&nbsp;
+      <a href="https://ccadventist.org" target="_blank" style="color:var(--gold);">ccadventist.org</a> &nbsp;•&nbsp;
+      Content sourced from <a href="https://www.gcyouthministries.org/ministries/pathfinders/pathfinder-uniforms-specifications/" target="_blank" style="color:var(--gold);">GC Youth Ministries</a>
+      and the <a href="https://sidadventist.org/wp-content/uploads/2025/09/3rd-Edition-Revised-Uniforms-Booklet-Southern-Africa-Indian-Ocean-Division-2025.pdf" target="_blank" style="color:var(--gold);">SID 2025 Uniforms Booklet</a><br>
+      For the official complete specifications, always refer to the source documents above.
+    </p>
+  </div>
+
+</div><!-- /page-specs -->
+
+
+<!-- ════════════════════════════════════
+     LIGHTBOX MODAL
+════════════════════════════════════ -->
+<div class="lightbox no-print" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lb-inner" id="lb-inner">
+    <img class="lb-img" id="lb-img" src="" alt="">
+    <div class="lb-body">
+      <span class="lb-badge" id="lb-badge"></span>
+      <div class="lb-title" id="lb-title"></div>
+      <div class="lb-description" id="lb-desc"></div>
+      <div class="lb-meta" id="lb-meta"></div>
+    </div>
+    <button class="lb-close" onclick="document.getElementById('lightbox').classList.remove('open')">
+      <i class="fas fa-times"></i> &nbsp; Close
+    </button>
+  </div>
+</div>
+
+
+<script>
+/* ══════════════════════════════════════
+   UNIFORM DATA — SID 2025
+══════════════════════════════════════ */
+const uniformData = {
+  adventurer:{
+    student:{
+      male:{image:"https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=600&h=800&fit=crop",label:"Adventurer Boy • Class A • Cape Conference",
+        items:[
+          {name:"White Pilot Shirt (long sleeve)",required:true,price:295,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",
+            desc:"The official long-sleeve white pilot shirt is the foundation of the Class A Adventurer uniform. It must be pressed and clean at all times.",
+            placement:"Worn tucked into pants. All buttons fastened. Insignia placed per SID specifications.",
+            when:"All Class A events: church, parades, camporees, investiture."
+          },
+          {name:"Navy Blue Straight Pants",required:true,price:420,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=80&h=80&fit=crop",
+            desc:"Straight-cut navy blue pants in the official Adventurer programme colour.",
+            placement:"Worn with a belt. Must be clean and neatly pressed with a crease.",
+            when:"Class A uniform only. Not for field uniform use."
+          },
+          {name:"Orange Neckerchief + Woggle",required:true,price:85,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",
+            desc:"The orange neckerchief is the distinctive Adventurer scarf. It is worn folded into a triangle and secured with the official woggle/slide.",
+            placement:"Placed under the shirt collar, point hanging down the front, secured with woggle at the throat.",
+            when:"All Class A events. The neckerchief is a core identification insignia of the Adventurer programme."
+          },
+          {name:"Navy Garrison Cap",required:true,price:120,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",
+            desc:"The official navy blue garrison cap for Adventurers. Carries the 2-inch Adventurer Club emblem.",
+            placement:"Worn straight on the head, emblem centred above the left eye.",
+            when:"All Class A uniform occasions. Never worn indoors during worship."
+          },
+          {name:"Black Polished Shoes",required:true,price:350,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=80&h=80&fit=crop",
+            desc:"Plain black polishable lace-up shoes. Must be highly polished and clean at all times.",
+            placement:"Worn with black socks. Shoes must be polished to a shine before each uniform event.",
+            when:"All Class A events. Clean and polished — an unpolished shoe reflects poorly on the whole club."
+          },
+          {name:"Black Belt",required:false,price:95,image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop",
+            desc:"Plain black leather or faux-leather belt. Optional accessory for neatness.",
+            placement:"Worn through belt loops of the pants, buckle centred.",
+            when:"Class A events where club chooses to wear belts. If some members wear belts, all must."
+          },
+          {name:"Honour Sash",required:false,price:180,image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop",
+            desc:"The navy/orange Adventurer sash is worn to display earned Adventurer awards and class pins only. Not an AY/Pathfinder sash.",
+            placement:"Worn diagonally from right shoulder to left hip, over the shirt.",
+            when:"Class A events once honours have been earned. If any club member wears a sash, all must."
+          },
+          {name:"Club Name Crescent",required:false,price:45,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",
+            desc:"An embroidered crescent patch bearing the name of the local Adventurer club.",
+            placement:"Worn ½ inch below shoulder seam on the right sleeve, centred.",
+            when:"All Class A uniform occasions once the club is officially registered."
+          }
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&h=800&fit=crop",label:"Adventurer Girl • Class A • Cape Conference",
+        items:[
+          {name:"White Pilot Blouse (long sleeve)",required:true,price:295,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",
+            desc:"The official long-sleeve white pilot blouse for Adventurer girls. Cut for female members, same insignia placement as the boys' shirt.",
+            placement:"Worn tucked into skirt. All buttons fastened. Insignia placed per SID specifications.",
+            when:"All Class A events: church, parades, camporees, investiture."
+          },
+          {name:"Navy Blue Knee-Length Skirt",required:true,price:420,image:"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=80&h=80&fit=crop",
+            desc:"Straight-cut navy blue knee-length skirt in the official Adventurer programme colour.",
+            placement:"Worn at knee length. Must be clean and neatly pressed.",
+            when:"Class A uniform only."
+          },
+          {name:"Orange Neckerchief + Woggle",required:true,price:85,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",
+            desc:"The orange neckerchief with woggle — same as the boys' version. Core Adventurer identification insignia.",
+            placement:"Under collar, point front, secured with woggle at throat.",
+            when:"All Class A events."
+          },
+          {name:"Navy Garrison Cap",required:true,price:120,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",
+            desc:"Official navy blue garrison cap. Emblem centred on front.",
+            placement:"Worn straight, emblem above left eye.",
+            when:"All Class A events."
+          },
+          {name:"Black Court Shoes",required:true,price:380,image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=80&h=80&fit=crop",
+            desc:"Black court-style shoes for Adventurer girls. Must be clean and polished.",
+            placement:"Worn with plain black or off-black stockings/tights.",
+            when:"All Class A events."
+          },
+          {name:"Honour Sash",required:false,price:180,image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop",
+            desc:"Adventurer sash displaying earned awards and class pins.",
+            placement:"Right shoulder to left hip, over the blouse.",
+            when:"Class A events once honours earned. Club-wide uniformity required."
+          }
+        ]
+      }
+    },
+    counselor:{
+      male:{image:"path_malecoun.jpg",label:"Adventurer Counselor (Male) • Cape Conference",
+        items:[
+          {name:"White Pilot Shirt",required:true,price:295,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"Staff version of the white pilot shirt.",placement:"Worn with epaulettes on shoulders.",when:"All Class A staff events."},
+          {name:"Navy Blue Pants",required:true,price:420,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=80&h=80&fit=crop",desc:"Navy blue straight pants.",placement:"Neatly pressed.",when:"Class A events."},
+          {name:"Orange Neckerchief + Staff Tie",required:true,price:135,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Staff neckerchief with distinctive staff tie slide.",placement:"Under collar, secured with staff tie.",when:"All Class A staff events."},
+          {name:"Hard Navy Epaulettes",required:true,price:95,image:"https://images.unsplash.com/photo-1537832816519-689ad163239b?w=80&h=80&fit=crop",desc:"Hard navy epaulettes denoting staff rank.",placement:"Worn on both shoulders of the shirt.",when:"All Class A events for counselors and staff."},
+          {name:"Counselor Rank Strip",required:true,price:65,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Cloth strip identifying the wearer as a counselor.",placement:"Worn below club name crescent on right sleeve.",when:"All Class A events."},
+          {name:"Staff Lanyard",required:false,price:75,image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop",desc:"Optional staff identification lanyard.",placement:"Worn around the neck, under the collar.",when:"Optional at Class A events."}
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=800&fit=crop",label:"Adventurer Counselor (Female) • Cape Conference",
+        items:[
+          {name:"White Pilot Blouse",required:true,price:295,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"Staff white pilot blouse.",placement:"With epaulettes.",when:"Class A staff events."},
+          {name:"Navy Blue Knee-Length Skirt",required:true,price:420,image:"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=80&h=80&fit=crop",desc:"Navy skirt.",placement:"Knee length.",when:"Class A events."},
+          {name:"Orange Neckerchief + Staff Tie",required:true,price:135,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Staff neckerchief.",placement:"Under collar.",when:"All Class A staff events."},
+          {name:"Hard Navy Epaulettes",required:true,price:95,image:"https://images.unsplash.com/photo-1537832816519-689ad163239b?w=80&h=80&fit=crop",desc:"Staff rank epaulettes.",placement:"Both shoulders.",when:"Class A staff events."},
+          {name:"Counselor Rank Strip",required:true,price:65,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Counselor identification strip.",placement:"Right sleeve below crescent.",when:"All Class A events."},
+          {name:"Staff Lanyard",required:false,price:75,image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop",desc:"Optional staff lanyard.",placement:"Around neck.",when:"Optional."}
+        ]
+      }
+    }
+  },
+  pathfinder:{
+    student:{
+      male:{image:"https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&h=800&fit=crop",label:"Pathfinder Boy • Class A • SID / Cape Conference",
+        items:[
+          {name:"White Long-Sleeve Pilot Shirt",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"The official white long-sleeve pilot shirt is the centrepiece of the Class A Pathfinder uniform. It must be immaculately pressed and white.",placement:"Worn tucked in, all buttons done. Collar buttoned. Insignia on both sleeves and pocket as per SID placement guide.",when:"All Class A occasions: church, Pathfinder Sabbath, camporees, investiture, parades, and public events."},
+          {name:"Bottle Green Straight Pants",required:true,price:450,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=80&h=80&fit=crop",desc:"Straight-cut bottle green pants in the official SID Pathfinder colour. Must be cleaned and pressed with a sharp crease.",placement:"Worn with belt. Neatly pressed. Hemmed to correct length.",when:"Class A Pathfinder events as part of the full dress uniform."},
+          {name:"Yellow Neckerchief + Pathfinder Slide",required:true,price:95,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"The yellow neckerchief is the signature Pathfinder scarf for the SID division. The Pathfinder slide/woggle holds it in place.",placement:"Folded into a triangle, placed under the shirt collar, point hanging down the front, secured with the official Pathfinder slide at throat level.",when:"All Class A events. Core identification insignia — must be worn at every formal occasion."},
+          {name:"Bottle Green Garrison Cap",required:true,price:135,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"The official bottle green garrison cap carries the 2-inch Pathfinder Club emblem. It is part of the formal Class A uniform.",placement:"Worn straight on the head with the emblem centred above the left eye. Not tilted.",when:"All Class A events. Remove indoors during worship or when directed."},
+          {name:"Black Polished Shoes",required:true,price:380,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=80&h=80&fit=crop",desc:"Plain black polishable lace-up shoes (gentlemen's style). Must be polished to a high shine before every uniform occasion.",placement:"Worn with black socks. Laces tied neatly. Polish applied before every event.",when:"All Class A events. An unpolished shoe reflects poorly on the entire club."},
+          {name:"Black Socks",required:true,price:45,image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop",desc:"Plain black socks worn with the black shoes.",placement:"Worn under the pants, not visible when standing.",when:"Class A uniform occasions."},
+          {name:"Bottle Green Honour Sash",required:true,price:210,image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop",desc:"The bottle green sash is worn across the body to display all earned Pathfinder honour badges. It is a required item once honours are earned and a club-wide uniformity rule applies.",placement:"Worn diagonally from the right shoulder to the left hip, over the shirt, outside all other items.",when:"Class A events once any honour is earned. If any member wears a sash, ALL club members must wear one."},
+          {name:"Pathfinder World Emblem Patch",required:true,price:55,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"The oval Pathfinder World Emblem patch containing the Pathfinder triangle represents the worldwide Pathfinder organisation. It is a core identification insignia.",placement:"Left sleeve, 1½ inches below the shoulder seam.",when:"Always worn with Class A uniform. Never removed."},
+          {name:"Club Name Crescent",required:false,price:45,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Embroidered crescent patch with the local club name.",placement:"Right sleeve, ½ inch below shoulder seam, centred.",when:"All Class A events for registered clubs."},
+          {name:"Soft Yellow Epaulettes",required:false,price:85,image:"https://images.unsplash.com/photo-1537832816519-689ad163239b?w=80&h=80&fit=crop",desc:"Soft yellow shoulder epaulettes for Pathfinder students.",placement:"Both shoulders of the shirt.",when:"Optional — if worn, all members must wear them."},
+          {name:"Black Belt with Pathfinder Buckle",required:false,price:95,image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop",desc:"Black belt with official Pathfinder emblem buckle.",placement:"Through belt loops, buckle centred.",when:"Optional accessory — club uniformity rule applies."}
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=800&fit=crop",label:"Pathfinder Girl • Class A • SID / Cape Conference",
+        items:[
+          {name:"White Long-Sleeve Pilot Blouse",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"White pilot blouse — female cut. Same insignia placement as the boys' shirt.",placement:"Tucked into skirt, all buttons done.",when:"All Class A events."},
+          {name:"Bottle Green Knee-Length Skirt",required:true,price:450,image:"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=80&h=80&fit=crop",desc:"Straight-cut bottle green knee-length skirt.",placement:"Worn at knee length, neatly pressed.",when:"Class A events."},
+          {name:"Yellow Neckerchief + Pathfinder Slide",required:true,price:95,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Yellow SID neckerchief with Pathfinder slide.",placement:"Under collar, point front, woggle at throat.",when:"All Class A events."},
+          {name:"Bottle Green Garrison Cap",required:true,price:135,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"Bottle green garrison cap.",placement:"Straight, emblem above left eye.",when:"All Class A events."},
+          {name:"Black Court Shoes",required:true,price:380,image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=80&h=80&fit=crop",desc:"Black court shoes for Pathfinder girls. Polished.",placement:"With plain black or off-black stockings.",when:"All Class A events."},
+          {name:"Bottle Green Honour Sash",required:true,price:210,image:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=80&h=80&fit=crop",desc:"Bottle green sash with honour badges.",placement:"Right shoulder to left hip, over blouse.",when:"Class A events once honours earned."},
+          {name:"Pathfinder World Emblem Patch",required:true,price:55,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"World Emblem patch.",placement:"Left sleeve, 1½ inches below shoulder seam.",when:"Always with Class A."},
+          {name:"Club Name Crescent",required:false,price:45,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Club name crescent.",placement:"Right sleeve ½ inch below shoulder.",when:"All Class A events."}
+        ]
+      }
+    },
+    counselor:{
+      male:{image:"path_malecoun.jpg",label:"Pathfinder Counselor (Male) • Cape Conference",
+        items:[
+          {name:"White Pilot Shirt + Hard Green Epaulettes",required:true,price:380,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"Staff white pilot shirt worn with hard green epaulettes denoting counselor rank.",placement:"Shirt tucked in, epaulettes on both shoulders.",when:"All Class A staff events."},
+          {name:"Bottle Green Pants",required:true,price:450,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=80&h=80&fit=crop",desc:"Bottle green straight pants.",placement:"Pressed.",when:"Class A staff events."},
+          {name:"Bottle Green Tie + Yellow Neckerchief",required:true,price:150,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Staff counselors wear a bottle green tie in addition to the yellow neckerchief.",placement:"Tie under collar, neckerchief over.",when:"All Class A staff events."},
+          {name:"Counselor Rank Strip",required:true,price:65,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Strip identifying position as counselor.",placement:"Right sleeve, centred below club crescent.",when:"Class A staff events."},
+          {name:"Green & Yellow Staff Lanyard",required:true,price:75,image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop",desc:"Distinctive green and yellow lanyard for Pathfinder staff.",placement:"Around neck, under collar.",when:"Class A staff events."},
+          {name:"Black Belt",required:false,price:95,image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=80&h=80&fit=crop",desc:"Plain black belt.",placement:"Through belt loops.",when:"Optional."}
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=800&fit=crop",label:"Pathfinder Counselor (Female) • Cape Conference",
+        items:[
+          {name:"White Pilot Blouse + Hard Green Epaulettes",required:true,price:380,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"Staff blouse with hard green epaulettes.",placement:"Epaulettes on both shoulders.",when:"Class A staff events."},
+          {name:"Bottle Green Knee-Length Skirt",required:true,price:450,image:"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=80&h=80&fit=crop",desc:"Bottle green skirt.",placement:"Knee length, pressed.",when:"Class A events."},
+          {name:"Bottle Green Tie + Yellow Neckerchief",required:true,price:150,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Staff tie + neckerchief.",placement:"Tie under collar.",when:"Class A staff events."},
+          {name:"Counselor Rank Strip",required:true,price:65,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Counselor rank strip.",placement:"Right sleeve.",when:"Class A events."},
+          {name:"Green & Yellow Staff Lanyard",required:true,price:75,image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop",desc:"Staff lanyard.",placement:"Around neck.",when:"Class A events."}
+        ]
+      }
+    }
+  },
+  masterguide:{
+    student:{
+      male:{image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop",label:"Master Guide Trainee • Cape Conference",
+        items:[
+          {name:"White Pilot Shirt",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"White pilot shirt for MG trainees.",placement:"Tucked in, buttoned.",when:"Class A MG events."},
+          {name:"Bottle Green Pants",required:true,price:450,image:"https://images.unsplash.com/photo-1542272604-787c3835535d?w=80&h=80&fit=crop",desc:"Bottle green pants.",placement:"Pressed.",when:"Class A."},
+          {name:"Yellow Neckerchief with Red Edging",required:true,price:120,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"The MG neckerchief has distinctive red edging differentiating it from the standard Pathfinder scarf.",placement:"Under collar, secured with MG slide.",when:"All MG Class A events."},
+          {name:"Bottle Green Garrison Cap",required:true,price:135,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"Bottle green cap.",placement:"Straight on head.",when:"Class A events."},
+          {name:"Black Polished Shoes",required:true,price:380,image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=80&h=80&fit=crop",desc:"Black polished shoes.",placement:"With black socks.",when:"Class A events."}
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=800&fit=crop",label:"Master Guide Trainee (Female) • Cape Conference",
+        items:[
+          {name:"White Pilot Blouse",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"White pilot blouse.",placement:"Tucked in.",when:"Class A."},
+          {name:"Bottle Green Knee-Length Skirt",required:true,price:450,image:"https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=80&h=80&fit=crop",desc:"Bottle green skirt.",placement:"Knee length.",when:"Class A."},
+          {name:"Yellow Neckerchief with Red Edging",required:true,price:120,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"MG neckerchief with red edging.",placement:"Under collar.",when:"All MG Class A events."},
+          {name:"Bottle Green Garrison Cap",required:true,price:135,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"Green garrison cap.",placement:"Straight on head.",when:"Class A."},
+          {name:"Black Court Shoes",required:true,price:380,image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=80&h=80&fit=crop",desc:"Black court shoes.",placement:"With stockings.",when:"Class A."}
+        ]
+      }
+    },
+    counselor:{
+      male:{image:"https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=600&h=800&fit=crop",label:"Master Guide Counselor • Full Suit • Cape Conference",
+        items:[
+          {name:"Bottle Green MG Suit Jacket & Pants",required:true,price:1250,image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop",desc:"The full bottle green Master Guide suit is the most senior uniform in the Pathfinder programme. The jacket carries all MG insignia.",placement:"Suit jacket worn over shirt. Pants neatly pressed. Jacket buttoned.",when:"Master Guide investiture, major events, camporees, church. The highest-ranking uniform in the programme."},
+          {name:"White Pilot Shirt",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"White pilot shirt worn under the MG jacket.",placement:"Tucked in.",when:"Always with MG suit."},
+          {name:"Yellow MG Neckerchief (Red Edging)",required:true,price:120,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"Master Guide neckerchief with distinctive red border edging.",placement:"Under collar, MG slide accepted as long as it is a Master Guide slide.",when:"All MG Class A events."},
+          {name:"Hard Green Epaulettes (Silver MG Logo)",required:true,price:95,image:"https://images.unsplash.com/photo-1537832816519-689ad163239b?w=80&h=80&fit=crop",desc:"Hard green epaulettes with the silver Master Guide logo denoting the highest staff rank.",placement:"Both shoulders of the jacket.",when:"Always with MG suit."},
+          {name:"Gold Master Guide Star Patch",required:true,price:85,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Gold star patch representing the Master Guide achievement — the highest Pathfinder award.",placement:"Left sleeve — Master Guide Star Chevron above other chevrons.",when:"Always with MG suit."},
+          {name:"Master Guide Name Stripe + Pin",required:true,price:110,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Name stripe and official Master Guide pin placed on the left pocket area.",placement:"MG Pin centred on left pocket flap.",when:"Always with MG suit."},
+          {name:"Bottle Green Garrison Cap (MG Logo)",required:true,price:150,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"Senior green garrison cap bearing the Master Guide logo.",placement:"Straight, emblem above left eye.",when:"All MG Class A events."},
+          {name:"Master Guide Lanyard",required:false,price:85,image:"https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=80&h=80&fit=crop",desc:"Optional MG staff lanyard.",placement:"Around neck, inside collar.",when:"Optional at MG events."}
+        ]
+      },
+      female:{image:"https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=800&fit=crop",label:"Master Guide Counselor (Female) • Full Suit • Cape Conference",
+        items:[
+          {name:"Bottle Green MG Suit Jacket & Knee Skirt",required:true,price:1250,image:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop",desc:"Full bottle green MG suit — jacket and knee-length skirt version.",placement:"Jacket over blouse. Skirt knee length.",when:"Master Guide events."},
+          {name:"White Pilot Blouse",required:true,price:320,image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=80&h=80&fit=crop",desc:"White pilot blouse under MG jacket.",placement:"Under jacket.",when:"Always with MG suit."},
+          {name:"Yellow MG Neckerchief (Red Edging)",required:true,price:120,image:"https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=80&h=80&fit=crop",desc:"MG neckerchief with red edging.",placement:"Under collar.",when:"All MG events."},
+          {name:"Hard Green Epaulettes",required:true,price:95,image:"https://images.unsplash.com/photo-1537832816519-689ad163239b?w=80&h=80&fit=crop",desc:"Hard green epaulettes on jacket shoulders.",placement:"Both shoulders.",when:"Always with MG suit."},
+          {name:"Gold Master Guide Star Patch",required:true,price:85,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Gold star patch.",placement:"Left sleeve.",when:"Always with MG suit."},
+          {name:"Master Guide Name Stripe + Pin",required:true,price:110,image:"https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=80&h=80&fit=crop",desc:"Name stripe + MG pin.",placement:"Left pocket.",when:"Always with MG suit."},
+          {name:"Bottle Green Garrison Cap (MG Logo)",required:true,price:150,image:"https://images.unsplash.com/photo-1521369909029-2afed882baee?w=80&h=80&fit=crop",desc:"MG garrison cap.",placement:"Straight on head.",when:"All MG events."}
+        ]
+      }
+    }
+  }
+};
+
+/* ── GC Specs Page item data ── */
+const gcItems = [
+  {cat:'pathfinder',badge:'Pathfinder',title:'White Pilot Shirt / Blouse',img:'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=220&fit=crop',short:'The foundation of the Class A dress uniform. Long-sleeve white pilot cut.',desc:'The white long-sleeve pilot shirt (or blouse for female members) is the centrepiece of the Class A Pathfinder uniform. It must be immaculately pressed, clean, and fully buttoned at all times when worn in uniform.',meta:[{k:'Colour',v:'White — no off-white, cream, or pale yellow substitutions permitted'},{k:'Style',v:'Pilot-cut with epaulette tabs on shoulders'},{k:'Sleeves',v:'Long sleeve — short sleeve not authorised for Class A'},{k:'Placement',v:'Insignia placed on both sleeves and pocket per SID placement guide'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Bottle Green Pants / Skirt',img:'https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=220&fit=crop',short:'Official SID Pathfinder colour bottoms. Straight cut for boys, knee-length for girls.',desc:'The bottle green bottoms are the official SID division colour for Pathfinders. Boys wear straight-leg pants; girls wear a knee-length skirt. The specific shade of bottle green is strictly defined and must match the official uniform colour.',meta:[{k:'Colour',v:'Bottle green (official SID shade)'},{k:'Boys style',v:'Straight-cut pants with belt loops, neatly pressed'},{k:'Girls style',v:'Straight-cut knee-length skirt (not above knee)'},{k:'Care',v:'Must be clean and neatly pressed with sharp crease (pants)'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Yellow Neckerchief + Slide',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop',short:'The SID Pathfinder scarf. Yellow with official Pathfinder slide/woggle.',desc:'The yellow neckerchief (scarf) is one of the two core identification insignia required on all Pathfinder uniforms worldwide (along with the World Emblem). The official Pathfinder slide secures it at the throat. The scarf must be the official yellow colour for the SID division.',meta:[{k:'Colour',v:'Yellow (SID division specification)'},{k:'Placement',v:'Under shirt collar, triangle point hanging down the front'},{k:'Fastening',v:'Secured with official Pathfinder slide/woggle at throat level'},{k:'Authority',v:'Required by GC — no substitution of colour or style without GC approval'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Honour Sash',img:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=220&fit=crop',short:'Bottle green sash worn diagonally. Displays all earned honour badges.',desc:'The honour sash is worn diagonally from the right shoulder to the left hip and displays all earned Pathfinder honour badges. It is one of the most visible aspects of the uniform and reflects the member\'s achievements. Once a member earns any honour, the sash becomes required, and a club-wide uniformity rule applies.',meta:[{k:'Colour',v:'Bottle green for SID Pathfinders'},{k:'Placement',v:'Right shoulder to left hip, worn over the shirt/blouse'},{k:'Badges',v:'All earned honour badges sewn in neat rows'},{k:'Uniformity',v:'If any member wears a sash, all members must wear one'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Pathfinder World Emblem',img:'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=220&fit=crop',short:'Oval patch with Pathfinder triangle. Core identification insignia worn on left sleeve.',desc:'The Pathfinder World Emblem is an oval patch containing the Pathfinder triangle and represents membership in the worldwide Pathfinder organisation. Along with the neckerchief, it is one of the two insignia required on all Pathfinder uniforms globally.',meta:[{k:'Placement',v:'Left sleeve, 1½ inches below the shoulder seam'},{k:'Purpose',v:'Core identification insignia — represents worldwide organisation'},{k:'Requirement',v:'Required on all Pathfinder uniforms at all levels'},{k:'Note',v:'Never removed or covered by other insignia'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Club Name Crescent',img:'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=220&fit=crop',short:'Embroidered crescent with local club name. Worn on right sleeve.',desc:'The Club Name Crescent is an embroidered curved patch carrying the name of the local Pathfinder club. It identifies which specific club the member belongs to within the wider conference.',meta:[{k:'Placement',v:'Right sleeve, ½ inch below shoulder seam, centred on sleeve'},{k:'Content',v:'Official club name as registered with the conference'},{k:'Font/style',v:'Must conform to conference-approved design guidelines'},{k:'When',v:'All Class A events for officially registered clubs'}]},
+  {cat:'pathfinder',badge:'Pathfinder',title:'Garrison Cap',img:'https://images.unsplash.com/photo-1521369909029-2afed882baee?w=400&h=220&fit=crop',short:'Official programme-colour cap. Carries the Pathfinder emblem on the front.',desc:'The garrison cap is the official headwear for the Class A Pathfinder uniform. It carries the 2-inch Pathfinder Club emblem triangle and must be the official programme colour (bottle green for Pathfinders, navy for Adventurers).',meta:[{k:'Colour (PF)',v:'Bottle green (SID Pathfinder)'},{k:'Colour (ADV)',v:'Navy blue (Adventurer)'},{k:'Colour (MG)',v:'Bottle green with gold MG logo detail'},{k:'Emblem',v:'2-inch Pathfinder triangle centred on front'},{k:'Wearing',v:'Straight — never tilted. Remove indoors during worship'}]},
+  {cat:'adventurer',badge:'Adventurer',title:'Adventurer Shirt / Blouse',img:'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&h=220&fit=crop',short:'White pilot shirt/blouse. Same cut as Pathfinder but worn with navy uniform.',desc:'The Adventurer programme uses the same white pilot shirt/blouse as Pathfinders but pairs it with the navy blue Adventurer uniform items.',meta:[{k:'Programme',v:'Adventurer Club (ages 6–9 approximately)'},{k:'Colour',v:'White — same specifications as Pathfinder shirt'},{k:'Bottom colour',v:'Navy blue pants (boys) or navy blue knee-length skirt (girls)'},{k:'Sash type',v:'Adventurer sash only — not an AY/Pathfinder sash'}]},
+  {cat:'adventurer',badge:'Adventurer',title:'Orange Neckerchief',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop',short:'The distinctive Adventurer orange scarf with woggle.',desc:'The orange neckerchief is the signature Adventurer scarf, distinguishing Adventurer members from Pathfinders (yellow) and Master Guides (yellow with red edging). It is a core identification insignia of the Adventurer programme.',meta:[{k:'Colour',v:'Orange (Adventurer programme)'},{k:'vs Pathfinder',v:'Pathfinders wear yellow; Adventurers wear orange'},{k:'Fastening',v:'Official woggle/slide at throat level'},{k:'Requirement',v:'Core insignia — required at all Class A events'}]},
+  {cat:'masterguide',badge:'Master Guide',title:'Master Guide Suit',img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=220&fit=crop',short:'Full bottle green suit jacket and pants/skirt. Highest-ranking Pathfinder uniform.',desc:'The Master Guide suit is the most senior and prestigious uniform in the Pathfinder programme. Earning the right to wear this uniform represents completion of the Master Guide class — the highest achievement in the Pathfinder programme.',meta:[{k:'Who wears it',v:'Invested Master Guides who have completed the Master Guide class'},{k:'Jacket',v:'Bottle green suit jacket with all MG insignia'},{k:'Bottom',v:'Bottle green pants (male) or knee-length skirt (female)'},{k:'Occasion',v:'Major events, investiture, camporees, church — highest-honour occasions'}]},
+  {cat:'masterguide',badge:'Master Guide',title:'MG Neckerchief (Red Edging)',img:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=220&fit=crop',short:'Yellow neckerchief with red edging — unique to Master Guides.',desc:'The Master Guide neckerchief is distinguished from the standard Pathfinder yellow scarf by its distinctive red border edging. This immediately identifies the wearer as a Master Guide.',meta:[{k:'Colour',v:'Yellow with red border edging'},{k:'vs Pathfinder',v:'Standard Pathfinder scarf has no red edging'},{k:'Slide',v:'Different MG slides are accepted as long as they are Master Guide slides'},{k:'Authority',v:'Worn only by invested or training Master Guides'}]},
+  {cat:'field',badge:'Field Uniform',title:'Field Uniform T-Shirt',img:'https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=400&h=220&fit=crop',short:'Class B field uniform T-shirt for regular meetings and camp-outs.',desc:'The field uniform (Class B) is used during most regular club meetings and outdoor activities. Unlike the formal Class A, the T-shirt can be designed by each individual club within guidelines.',meta:[{k:'When used',v:'Regular weekly club meetings, camp-outs, nature study, community projects'},{k:'Design',v:'Each club may design its own T-shirt with Pathfinder logo, club logo, or combined'},{k:'Bottom',v:'Blue pants (boys and girls)'},{k:'Footwear',v:'Comfortable, practical footwear appropriate to the activity'}]}
+];
+
+/* ══════════════════════════════════════
+   BUILDER LOGIC
+══════════════════════════════════════ */
+let state = {gender:null,program:null,role:null};
+let selectedItems = [];
+
+function selectGender(g){
+  state.gender=g;
+  ['male','female'].forEach(n=>document.getElementById('btn-'+n).classList.remove('active'));
+  document.getElementById('btn-'+g).classList.add('active');
+  updateSteps(); updatePreview();
+}
+function selectProgram(p){
+  state.program=p;
+  ['adventurer','pathfinder','masterguide'].forEach(n=>document.getElementById('btn-'+n).classList.remove('active'));
+  document.getElementById('btn-'+p).classList.add('active');
+  updateSteps(); updatePreview();
+}
+function selectRole(r){
+  state.role=r;
+  ['student','counselor'].forEach(n=>document.getElementById('btn-'+n).classList.remove('active'));
+  document.getElementById('btn-'+r).classList.add('active');
+  updateSteps(); updatePreview();
+}
+
+function updateSteps(){
+  const circles=[1,2,3,4,5];
+  circles.forEach(i=>{
+    const c=document.getElementById('sc-'+i);
+    const l=document.getElementById('sl-'+i);
+    c.classList.remove('active','done'); l.classList.remove('active');
+  });
+  if(state.gender){mark('sc-1',true);mark('sl-1',true);}
+  if(state.program){mark('sc-2',true);mark('sl-2',true);}
+  if(state.role){mark('sc-3',true);mark('sl-3',true);}
+  // current active
+  if(!state.gender)setActive(1);
+  else if(!state.program)setActive(2);
+  else if(!state.role)setActive(3);
+  else setActive(4);
+}
+function mark(id,done){
+  const el=document.getElementById(id);
+  if(!el)return;
+  if(id.startsWith('sc-')){el.classList.add('done');el.innerHTML='<i class="fas fa-check" style="font-size:0.65rem;"></i>';}
+  else el.classList.add('active');
+}
+function setActive(n){
+  const c=document.getElementById('sc-'+n);
+  const l=document.getElementById('sl-'+n);
+  if(c){c.classList.remove('done');c.textContent=n;c.classList.add('active');}
+  if(l)l.classList.add('active');
+}
+
+function updatePreview(){
+  if(!state.gender||!state.program||!state.role)return;
+  let data=uniformData[state.program]?.[state.role]?.[state.gender];
+  if(!data){
+    const fb=uniformData[state.program]?.[state.role]?.['male'];
+    if(fb)data={...fb,label:fb.label.replace('(Male)','').replace(' Male','')};
+    else{document.getElementById('uniform-list').innerHTML='<div class="b-empty"><i class="fas fa-exclamation-circle"></i><p>This combination is not defined. Please try another selection.</p></div>';return;}
+  }
+  const img=document.getElementById('preview-image');
+  img.src=data.image; img.style.display='block';
+  document.getElementById('b-preview-ph').style.display='none';
+  document.getElementById('preview-label').textContent=data.label;
+  renderChecklist(data.items);
+  document.getElementById('size-section').classList.add('vis');
+}
+
+function renderChecklist(items){
+  selectedItems=items.map(i=>({...i,checked:i.required}));
+  const c=document.getElementById('uniform-list');
+  c.innerHTML='';
+  selectedItems.forEach((item,idx)=>{
+    const d=document.createElement('div');
+    d.className='u-item'+(item.checked?' checked':'');
+    d.id='urow-'+idx;
+    d.innerHTML=`
+      <input type="checkbox" id="chk-${idx}" ${item.checked?'checked':''} onchange="toggleItem(${idx})">
+      <img src="${item.image}" class="u-thumb" alt="${item.name}" title="Click to view details" onclick="event.stopPropagation();openLightbox({img:'${item.image}',badge:'${item.required?'Required':'Optional'}',title:'${item.name.replace(/'/g,"&#39;")}',desc:'${(item.desc||'').replace(/'/g,"&#39;")}',meta:[{k:'Placement',v:'${(item.placement||'See SID 2025 Booklet').replace(/'/g,"&#39;")}'},{k:'When to wear',v:'${(item.when||'See SID 2025 Booklet').replace(/'/g,"&#39;")}'},{k:'Status',v:'${item.required?'Required — must be worn':' Optional — club uniformity rules apply'}'}]})">
+      <div class="u-info">
+        <div class="u-name">${item.name}</div>
+        <span class="u-badge ${item.required?'b-req':'b-opt'}">${item.required?'&#10003; Required':'&#9675; Optional'}</span>
+      </div>
+      <div class="u-price">R ${item.price.toLocaleString()}</div>`;
+    d.addEventListener('click',function(e){if(e.target.tagName==='INPUT'||e.target.tagName==='IMG')return;document.getElementById('chk-'+idx).click();});
+    c.appendChild(d);
+  });
+  calcTotal();
+}
+
+function toggleItem(idx){
+  selectedItems[idx].checked=!selectedItems[idx].checked;
+  const r=document.getElementById('urow-'+idx);
+  r.classList.toggle('checked',selectedItems[idx].checked);
+  calcTotal();
+}
+
+function calcTotal(){
+  const t=selectedItems.filter(i=>i.checked).reduce((s,i)=>s+i.price,0);
+  document.getElementById('total-price').textContent='R '+t.toLocaleString();
+}
+
+/* ══════════════════════════════════════
+   PRINT
+══════════════════════════════════════ */
+function generatePrintPDF(){
+  if(!state.program||!state.role||!state.gender){alert('Please complete all three steps (Gender, Programme, Role) before printing.');return;}
+  const name=document.getElementById('user-name').value.trim()||'Not provided';
+  const phone=document.getElementById('user-phone').value.trim()||'Not provided';
+  const email=document.getElementById('user-email').value.trim()||'Not provided';
+  const ss=document.getElementById('shirt-size').value||'Not selected';
+  const ps=document.getElementById('pants-size').value||'Not selected';
+  const hon=document.getElementById('honours-input').value.trim()||'None requested';
+  const ch=selectedItems.filter(i=>i.checked);
+  const tot=ch.reduce((s,i)=>s+i.price,0);
+  const date=new Date().toLocaleDateString('en-ZA',{day:'2-digit',month:'long',year:'numeric'});
+  const rows=ch.map(i=>`<tr><td style="padding:9px 6px;border-bottom:1px solid #eee;font-size:13px;">${i.name}</td><td style="padding:9px 6px;border-bottom:1px solid #eee;text-align:center;font-size:11px;color:${i.required?'#1e6b3a':'#7a5c00'}">${i.required?'✓ Required':'○ Optional'}</td><td style="padding:9px 6px;border-bottom:1px solid #eee;text-align:right;font-weight:700;font-size:13px;">R ${i.price.toLocaleString()}</td></tr>`).join('');
+  const honRow=hon!=='None requested'?`<div style="background:#fff8e0;border:1px solid #c9a22f;border-radius:6px;padding:12px 16px;margin:16px 0;"><strong style="color:#7a5c00;">Honours & Badges Requested:</strong> ${hon}<br><span style="font-size:11px;color:#7a5c00;">Prices TBA – requires leader/director approval</span></div>`:'';
+  const w=window.open('','_blank','width=820,height=1000');
+  w.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Uniform List – ${name}</title>
+  <style>body{font-family:'Segoe UI',Arial,sans-serif;color:#111;margin:0;padding:0}.hdr{background:#002855;color:#fff;padding:20px 28px;border-bottom:4px solid #c9a22f;display:flex;align-items:center;justify-content:space-between}.hdr h1{font-size:18px;letter-spacing:1px}.hdr p{font-size:10px;color:rgba(180,210,255,.8);margin:4px 0 0}.sdg{background:#c9a22f;color:#002855;font-weight:700;padding:5px 12px;border-radius:5px;font-size:10px;letter-spacing:1px}.pg{max-width:740px;margin:0 auto;padding:32px 28px}.ig{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:#f7f9fc;border-radius:8px;padding:16px 18px;border:1px solid #e0e5f0;margin:18px 0}.ir{font-size:12px;display:flex;gap:6px}.ir strong{min-width:105px;color:#555}table{width:100%;border-collapse:collapse;margin-top:16px}th{background:#002855;color:#fff;padding:9px 6px;text-align:left;font-size:11px;letter-spacing:1px}th:last-child{text-align:right}.tr{background:#f7f9fc;font-weight:700}.tr td{padding:13px 6px;border-top:2px solid #002855}.tr td:last-child{color:#002855;font-size:17px;text-align:right}.ft{margin-top:28px;border-top:1px solid #e0e0e0;padding-top:14px;font-size:11px;color:#888;text-align:center}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}}</style>
+  </head><body><div class="hdr"><div><h1>CAPE CONFERENCE SDA YOUTH MINISTRIES</h1><p>Official Uniform Shopping List &nbsp;•&nbsp; ${state.program.toUpperCase()} &nbsp;•&nbsp; ${state.role.toUpperCase()} &nbsp;•&nbsp; ${state.gender.toUpperCase()}</p></div><div class="sdg">SID 2025</div></div>
+  <div class="pg"><div class="ig"><div class="ir"><strong>Name:</strong>${name}</div><div class="ir"><strong>Phone:</strong>${phone}</div><div class="ir"><strong>Email:</strong>${email}</div><div class="ir"><strong>Date:</strong>${date}</div><div class="ir"><strong>Shirt/Blouse:</strong>${ss}</div><div class="ir"><strong>Pants/Skirt:</strong>${ps}</div></div>${honRow}
+  <table><thead><tr><th>Item</th><th>Status</th><th style="text-align:right">Est. Price</th></tr></thead><tbody>${rows}</tbody><tr class="tr"><td colspan="2">ESTIMATED TOTAL (selected items)</td><td>R ${tot.toLocaleString()}</td></tr></table>
+  <p style="margin-top:14px;font-size:11px;color:#666;line-height:1.6">&#9432; Prices are estimates only. Verify current pricing with approved Cape Conference suppliers. Optional items may be required by your specific club.</p>
+  <div style="margin-top:20px;background:#f0f7ff;border:1px solid #bed3f5;border-radius:6px;padding:12px 16px;font-size:11px;color:#1a3a6b"><strong>Approved Suppliers:</strong><br>TOC Youth Ministries – <a href="https://ay.toc.adventist.org/?product_cat=sda-uniform">ay.toc.adventist.org</a>&nbsp;&nbsp;•&nbsp;&nbsp;Adventurer & Pathfinder Wear – WhatsApp 072 699 0090&nbsp;&nbsp;•&nbsp;&nbsp;Makinze Perfect Clothing – Nationwide</div>
+  <div class="ft">Cape Conference Youth Ministry &nbsp;•&nbsp; SID 2025 Booklet &amp; GC Youth Ministries &nbsp;•&nbsp; ${date}</div></div>
+  <script>window.onload=()=>{window.print();}<\/script></body></html>`);
+  w.document.close();
+}
+
+/* ══════════════════════════════════════
+   GC SPECS PAGE — ITEM CARDS
+══════════════════════════════════════ */
+function renderGcItems(filter){
+  const grid=document.getElementById('gc-items-grid');
+  grid.innerHTML='';
+  const items=filter==='all'?gcItems:gcItems.filter(i=>i.cat===filter);
+  items.forEach((item,i)=>{
+    const card=document.createElement('div');
+    card.className='gc-ucard';
+    const metaRows=item.meta.map(m=>`<div class="gc-ucard-desc-meta-row"><strong>${m.k}</strong><span>${m.v}</span></div>`).join('');
+    card.innerHTML=`
+      <div class="gc-ucard-img-wrap" onclick="openLightbox({img:'${item.img}',badge:'${item.badge}',title:'${item.title.replace(/'/g,"&#39;")}',desc:'${item.desc.replace(/'/g,"&#39;")}',meta:${JSON.stringify(item.meta).replace(/"/g,'&quot;')}})">
+        <img class="gc-ucard-img" src="${item.img}" alt="${item.title}" loading="lazy">
+        <span class="gc-ucard-type-badge">${item.badge}</span>
+        <div class="gc-ucard-zoom-btn"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="gc-ucard-body">
+        <div class="gc-ucard-title">${item.title}</div>
+        <div class="gc-ucard-short">${item.short}</div>
+      </div>
+      <div class="gc-ucard-desc" id="desc-${i}">
+        <div class="gc-ucard-desc-title"><i class="fas fa-info-circle"></i> Description &amp; Placement</div>
+        <p>${item.desc}</p>
+        <div class="gc-ucard-desc-meta">${metaRows}</div>
+      </div>
+      <button class="gc-ucard-expand-btn" id="ebtn-${i}" onclick="toggleDesc(${i})">
+        <i class="fas fa-chevron-down"></i> View Details
+      </button>`;
+    grid.appendChild(card);
+  });
+}
+
+function toggleDesc(i){
+  const d=document.getElementById('desc-'+i);
+  const b=document.getElementById('ebtn-'+i);
+  d.classList.toggle('open');
+  b.classList.toggle('open');
+  b.innerHTML=b.classList.contains('open')
+    ?'<i class="fas fa-chevron-up"></i> Hide Details'
+    :'<i class="fas fa-chevron-down"></i> View Details';
+}
+
+function filterItems(cat,btn){
+  document.querySelectorAll('.gc-type-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGcItems(cat);
+}
+
+/* ══════════════════════════════════════
+   LIGHTBOX
+══════════════════════════════════════ */
+function openLightbox(data){
+  const lb=document.getElementById('lightbox');
+  document.getElementById('lb-img').src=data.img;
+  document.getElementById('lb-badge').textContent=data.badge;
+  document.getElementById('lb-title').textContent=data.title;
+  document.getElementById('lb-desc').textContent=data.desc||'';
+  const meta=document.getElementById('lb-meta');
+  if(data.meta&&data.meta.length){
+    meta.style.display='block';
+    meta.innerHTML=(Array.isArray(data.meta)?data.meta:JSON.parse(data.meta.replace(/&quot;/g,'"'))).map(m=>`<div class="lb-meta-row"><strong>${m.k}</strong><span>${m.v}</span></div>`).join('');
+  } else { meta.style.display='none'; }
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(e.target.id==='lightbox'){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+
+/* ══════════════════════════════════════
+   TAB SWITCHING
+══════════════════════════════════════ */
+function switchTab(tab){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+tab).classList.add('active');
+  document.getElementById('tab-'+tab).classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObs.unobserve(e.target);}});
+},{threshold:0.08});
+document.querySelectorAll('.gc-reveal').forEach(el=>revealObs.observe(el));
+
+/* ══════════════════════════════════════
+   INIT
+══════════════════════════════════════ */
+window.addEventListener('load',()=>{
+  renderGcItems('all');
+  setTimeout(()=>{selectGender('male');selectProgram('pathfinder');selectRole('student');},350);
+});
+</script>
+</body>
+</html>
